@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# <Dragon Slayer RPG>
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: <[Ellen Yim](https://github.com/ellenyim8)> , <[Chen Yuan](https://github.com/chenchen6394)> , <[Damian Ramos](https://github.com/dramo071)> , <[Jason Guan](https://github.com/jguan052)> 
@@ -21,10 +21,12 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+	I am a fan of RPG games and dragonslayer stories.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+	I will use C++ programming language.
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project? What are the features that the project provides?
- > 
+ 	The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can healpby using potions. 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
