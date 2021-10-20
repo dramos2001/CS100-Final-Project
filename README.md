@@ -4,7 +4,7 @@
 # <Dragon Slayer RPG>
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: <[Ellen Yim](https://github.com/ellenyim8)> , <[Chen Yuan](https://github.com/chenchen6394)> , <[Damian Ramos](https://github.com/dramo071)> , <[Jason Guan](https://github.com/jguan052)> 
+ > Authors: <[Ellen Yim](https://github.com/ellenyim8)> , <[Chen Yuan](https://github.com/chenchen6394)> , <[Damian Ramos](https://github.com/dramos2001)> , <[Jason Guan](https://github.com/jasonguan067)> 
  
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least two design patterns iteratively, which you will have to justify for later phases.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly recommend you practice them too.
  
@@ -20,11 +20,13 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?		I am a fan of RPG games and dragonslayer stories.
+ > * Why is it important or interesting to you?
+	I am a fan of RPG games and dragonslayer stories.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
-I will use C++ programming language.
+	I will use C++ programming language.
  >   * [toolname](link) - Short description
- > * What will be the input/output of your project? What are the features that the project provides?		The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can heal by using potions. 
+ > * What will be the input/output of your project? What are the features that the project provides?
+	The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can heal by using potions. 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
