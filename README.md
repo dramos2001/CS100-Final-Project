@@ -1,9 +1,11 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
+
 ## Dragon Slayer RPG
  
  > Authors: <[Ellen Yim](https://github.com/ellenyim8)> , <[Chen Yuan](https://github.com/chenchen6394)> , <[Damian Ramos](https://github.com/dramos2001)> , <[Jason Guan](https://github.com/jasonguan067)> 
+ > Project description: 
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
