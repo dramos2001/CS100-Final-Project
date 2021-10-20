@@ -20,13 +20,11 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
-I am a fan of RPG games and dragonslayer stories.
+ > * Why is it important or interesting to you?		I am a fan of RPG games and dragonslayer stories.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
 I will use C++ programming language.
  >   * [toolname](link) - Short description
- > * What will be the input/output of your project? What are the features that the project provides?
-The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can heal by using potions. 
+ > * What will be the input/output of your project? What are the features that the project provides?		The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can heal by using potions. 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
