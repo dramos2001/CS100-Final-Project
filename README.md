@@ -3,13 +3,8 @@
  Authors: [Ellen Yim](https://github.com/ellenyim8) , [Chen Yuan](https://github.com/chenchen6394) , [Damian Ramos](https://github.com/dramos2001) , [Jason Guan](https://github.com/jasonguan067) 
 
 ## Project Description
- Your project description should summarize the project you are proposing. Be sure to include:
- * Why is it important or interesting to you?
-	I am a fan of RPG games and dragonslayer stories.
- * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
-	I will use C++ programming language.
- * What will be the input/output of your project? What are the features that the project provides?
-	The purpose of this project is to create an RPG game about the story of a dragon slayer. The main character will be given a starting health and mana. His health 	will be deducted when he's attacked. His mana will also be reduced anytime he uses a spell. However, he can heal by using potions. 
+ * For our final project we will be developing a text-based RPG game revolving around a dragonslayer storyline. Some of us are fans of RPG games and dragonslayer stories so we felt this would be a fun project to work on while still being challenging. The project will be developed using C++ and the C++ standard template library (other libraries/technologies may be implemented to develop the game in the future).
+ * In our game there will be a main character who is given a starting health and mana. This character is able to do certain tasks/actions like attack, cast spells, heal, etc. These tasks will be inputted by the player. The result of those actions will be outputted to the player and will drive the story further. The character has certain attributes like health and mana that are affected by the gameplay and by inputs from the player. For example, the character's health will be deducted when attacked and his mana will be reduced when he uses a spell.
  
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to:
