@@ -13,7 +13,8 @@
  >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+ > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides). 
+ > https://lucid.app/lucidchart/7c55629a-0410-4fbd-9f66-8f29e295d2bc/edit?viewport_loc=432%2C300%2C2042%2C996%2CHWEp-vi-RSFO&invitationId=inv_303ca84e-dff6-427e-b903-fa47e56e86a6
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
