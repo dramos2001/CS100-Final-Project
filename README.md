@@ -6,15 +6,21 @@
  * For our final project, we will be developing a text-based RPG game revolving around a dragonslayer storyline. Some of us are fans of RPG games and dragonslayer stories so we felt this would be a challenging, yet worthwhile project to work on. This project will be developed using C++ and the C++ standard template library (other libraries/technologies may be implemented to develop the game in the future).
  * In our game, there will be a main character who is given health, level, and experience at the start. This character will perform specific tasks/actions such as attack, cast spells, heal, defend, etc. The user will input what they want their player to do based on the circumstances set in the game. The inputs will be recorded and executed and the game will output what happens as a result of their inputs. For example, lets say the user is fighting a mob. They want to attack the mob, so they input "attack" or something similar. The player will then attack the mob and the damage done on them will be outputted back to the user. The user will also be able to input decisions that relate to the story. For examle, the player reaches a fork in the road. The game will ask (output to) the user if they want to go right or left. The user inputs "left" and they go left and are met with a mob. This goes on throughout the majority of the game. The decisions and outcomes will be displayed to the user and will progress the plot further. The character has certain attributes, such as health and mana, that are modified by the gameplay and inputs from the player. For instance, the character's health will be deducted when attacked and their level will be increased when completing a certain task.
  
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for your project and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides). 
- 
+![image](https://user-images.githubusercontent.com/56313109/140868150-e9fd2c09-3333-4f7e-8ed1-d888b4fc9d8e.png)
+ Description of the UML Diagram:
+ * Player class that contains attributes, actions, etc. of the player
+   * 3 different player types that inherit from the Player class, they are: paladin, warrior, and wizard
+   * Player types have specific attributes and moves they can do
+ * Bag class acts as a container class to store the items the player has such as weapons
+   * This class has a composition relationship with Player class
+   * Bag contains data of type Item class; composition relationship between Bag and Item
+   * 3 item types that inherit from Item: Spell, Potion, and Weapon, each with their own attributes
+ * Mob class contains attributes, actions, etc. of mobs in the game
+   * Main mob type will be dragon
+ * Shop class contains items to buy
+ * Quest class has different levels that player (start from level 1 and once completes a level, gets points and can exchange to buy items at Shop
+
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
