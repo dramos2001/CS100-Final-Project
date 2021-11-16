@@ -14,7 +14,7 @@ public:
     string getRole() const {return _role; }
     void attack() { } 
     void defend() { } 
-    void castSpell() { } 
+    void castSpell() { }  // castSpell should be stronger than attack and defense hence being a wizard.
 
 private:
     string _role; 

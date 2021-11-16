@@ -12,7 +12,7 @@ public:
     Paladin() : Player() { _role="Paladin"; _health=120; _armor=30; _mana=100; } 
     string getRole() const {return _role; }
 
-    void attack() { } 
+    void attack() { }  // attack is stronger than castSpell and defend. 
     void defend() { } 
     void castSpell() { } 
 

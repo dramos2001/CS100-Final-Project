@@ -12,7 +12,7 @@ public:
     Warrior() : Player() {_role = "Warrior"; _health = 100; _armor = 50; _mana = 100; }
     string getRole() const {return _role; }
     void attack() { } 
-    void defend() { } 
+    void defend() { } // defense should be stronger than castSpell
     void castSpell() { } 
 
 private:
