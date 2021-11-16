@@ -11,6 +11,9 @@ public:
     string getItemName() const {return _item; }
     string getDescription() const {return _description; }
     int getQuantity() const {return _quantity; }
+
+    void usePotion(string potion); 
+
 private:
     string _item; 
     string _description;

@@ -34,7 +34,6 @@ public:
     }
 
     virtual string getRole() const {return this->role; }
-
     string getName() const {return this->name; }
     int getLevel() const {return this->level; }
     int getEXP() const {return this->exp; }
@@ -61,5 +60,4 @@ public:
 
 
 #endif //__PLAYER_HPP__
-
 

@@ -12,6 +12,8 @@ public:
     string getDescription() const {return _description; }
     int getQuantity() const {return _quantity; }
 
+    void useWeapon(string weapon); 
+
 private:
     string _name; 
     string _description;
