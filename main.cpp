@@ -1,24 +1,26 @@
-//#include <gtest/gtest.h>
-
 #include <iostream>
 #include <cstdlib>
-using namespace std;
 
 // class definitions
 #include "game.hpp"
 #include "Player.hpp"
 
+// USING STATEMENTS
+using std::cout;
+using std::endl;
+using std::cin;
 
+
+// MAIN DRIVER CODE STARTS HERE
 int main() {
     Game game;
-    Player player;  
-    int choice = 0; 
-    string role = "";
+    int choice = 0;
 
     choice = game.start();
     if (choice == 2) {
-	cout << "Thanks for playing, until next time...\n";
-	exit(EXIT_SUCESS);
+        cout << "Thanks for playing, until next time...\n";
+        exit(EXIT_SUCCESS);
+
     }
 
     cout << "Wise choice\n";
@@ -26,6 +28,7 @@ int main() {
     cout << "1. Paladin\n";
     cout << "2. Warrior\n";
     cout << "3. Wizard\n";
+
     cin >> choice; 
     switch(choice)
     {
@@ -37,12 +40,6 @@ int main() {
     
     cout << "Great!\n" << endl; 
 
+    return 0;
 }
-
-/*
-int main(int argc, char **argv) 
-{ 
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}*/
 
