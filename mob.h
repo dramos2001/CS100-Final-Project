@@ -2,8 +2,9 @@
 #define _MOB_HPP_
 #include <string>
 using namespace std;
-class Mob{
+class Mob {
     private:
+
     int health;
     string name;
     int level;
@@ -14,65 +15,82 @@ class Mob{
     int defense;
 
     public:
-    Mob(string name, string type){
+
+    Mob(string name, string type){ //constructor for a mob, values can be changed using setters&getters.
         this->name = name;
         mob_type = type;
+        level = 1;
+        exp = 0;
+        points = 0;
+        health = 50;
+        damage = 0;
+        defense = 0;
     }
 
     string getName(){
-        return name;
+        return this->name; //returns the name
     }
 
     string getMobType(){
-        return mob_type;
+        return this->mob_type; //returns the mob type
     }
 
-
-    /*void setMobType(string type){      // DONT BELIEVE WE NEED? - jason
- *         mob_type = type;
- *             }*/ 
-
-
+    //removed setMobType as I believe we do not need.
     void setLevel(int level){
-        this->level = level;
+        this->level = level; //sets the level of the mob
     }
 
     int getLevel(){
-        return level;
+        return this->level; //returns the level of the mob
     }
 
-    void setExP(int exp){
-        this->exp = exp;
+    int getExp(){
+        return this->exp; //returns the exp of the mob
+    }
+
+    void setExp(int exp){
+        this->exp = exp; //sets the exp
     }
 
     void setPoints(int points){
-        this->points = points;
+        this->points = points; //sets the points
     }
 
     int getPoints(){
-        return points;
+        return this->points; //returns the points
+    }
+
+    void setDefence(int defense){
+        this->defense = defense; //sets the defense
+    }
+
+    int getDefense(){
+        return this->defense; //returns the defense
     }
 
     int setHealth(int health){
-        this->health = health;
+        this->health = health; //sets the health
     }
 
     int getHealth(){
-        return health;
+        return this->health; //returns the health
     }
 
-    void attack(){
-
+    void setDamage(int damage){
+        this->damage = damage; //sets the damage
     }
 
-    void defend(){
-        
+    int getDamage(){
+        return this->damage; //returns the damage
     }
+
+    virtual void attack(){}
+    virtual void defend(){}
+
 };
 
+
 #endif
-
-
 
 
 
