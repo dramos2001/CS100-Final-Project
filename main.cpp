@@ -35,11 +35,7 @@ int main() {
     default: cout << "invalid choice." << endl; break; 
     };
     
-    cout << "Great!\nNow choose your mob choice:" << endl; 
-    cout << "1. Witch\n";
-    cout << "2. Mad King\n";
-    cout << "3. Dragon\n";
-
+    cout << "Great!\n" << endl; 
 
 }
 
