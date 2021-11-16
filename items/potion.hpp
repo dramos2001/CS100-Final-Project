@@ -6,11 +6,17 @@
 class Potion : public Item
 {
 public:
-    Potion() { } 
+    Potion() : Item() {_item = "Potion"; _description = "Healed 20 HP"; _quantity=5; }
 
+    string getItemName() const {return _item; }
+    string getDescription() const {return _description; }
+    int getQuantity() const {return _quantity; }
 private:
-
+    string _item; 
+    string _description;
+    int _quantity; 
 };
+
 
 #endif
 

@@ -6,12 +6,16 @@
 class Spell : public Item 
 {
 public:
-    Spell() : Item() {_spell_type = "_"; }
+    Spell() : Item() {_spell = "_spell_"; }
+
+    string getItemName() const {return _spell; }
+    string getDescription() const {return _description; }
 
     void castSpell(string spell); 
 
 private:
-    string _spell_type; 
+    string _spell; 
+    string _description; 
 };
 
 #endif
