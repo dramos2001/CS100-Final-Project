@@ -5,6 +5,7 @@
 
 class Game {
 public:
+
     // CONSTRUCTOR
     Game() {};
 
@@ -25,3 +26,4 @@ public:
 };
 
 #endif
+

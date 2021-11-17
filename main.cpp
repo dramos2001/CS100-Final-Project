@@ -3,6 +3,7 @@
 
 // class definitions
 #include "game.hpp"
+#include "Player.hpp"
 
 // USING STATEMENTS
 using std::cout;
@@ -19,6 +20,7 @@ int main() {
     if (choice == 2) {
         cout << "Thanks for playing, until next time...\n";
         exit(EXIT_SUCCESS);
+
     }
 
     cout << "Wise choice\n";
@@ -26,9 +28,17 @@ int main() {
     cout << "1. Paladin\n";
     cout << "2. Warrior\n";
     cout << "3. Wizard\n";
-    cin >> choice;
-    // set player role using choice here:
 
+    cin >> choice; 
+    switch(choice)
+    {
+    case 1: player.setRole("Paladin"); break; 
+    case 2: player.setRole("Warrior"); break;
+    case 3: player.setRole("Wizard"); break; 
+    default: cout << "invalid choice." << endl; break; 
+    };
+    
+    cout << "Great!\n" << endl; 
 
     return 0;
 }
