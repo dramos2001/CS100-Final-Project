@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <random>
 
 // class definitions
 #include "game.hpp"
@@ -39,6 +40,8 @@ int main() {
     };
     
     cout << "Great!\n" << endl; 
+    // set up random choice for mob: mad king, witch, dragon. 
+
 
     return 0;
 }
