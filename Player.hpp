@@ -1,8 +1,9 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
-#include <iostream>
-using namespace std; 
+
 #include <string>
+//#include "bag.h"
+using namespace std;
 
 class Player
 {
@@ -17,9 +18,10 @@ private:
     int armor;
     int defense;
     int mana;
+    //Bag* items_bag;
 
 public: 
-    Player(string name, string role)
+    Player(string name = "", string role = "")
     {
         this->name = name;
         this->role = role; 
