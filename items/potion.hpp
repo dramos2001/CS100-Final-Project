@@ -12,7 +12,10 @@ public:
     string getDescription() const {return _description; }
     int getQuantity() const {return _quantity; }
 
-    void usePotion(string potion); 
+    void usePotion() { 
+    	cout << "used potion. " << _description << endl;
+        _quantity--; 
+    } 
 
 private:
     string _item; 
