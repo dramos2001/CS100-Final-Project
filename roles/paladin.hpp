@@ -12,9 +12,20 @@ public:
     Paladin() : Player() { _role="Paladin"; _health=120; _armor=30; _mana=100; } 
     string getRole() const {return _role; }
 
-    void attack() { }  // attack is stronger than castSpell and defend. 
-    void defend() { } 
-    void castSpell() { } 
+    void attack() { 
+	int a = (rand() % _mana); 
+        cout << getRole() << " attacked for " << a << " damage. \n";
+    }
+
+    void defend() { 
+	int d = (rand() % _armor) + 10;
+        cout << getRole() << " defended for " << d << " ";
+    } 
+
+    void castSpell() {
+	Item spell = new Spell();
+        cout << spell->getItemName << " does damage for " << spell.castSpell() << endl; 
+    } 
 
 private:
     string _role;
