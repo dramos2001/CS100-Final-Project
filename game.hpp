@@ -8,8 +8,7 @@
 
 class Game {
 public:
-
-    // CONSTRUCTOR
+    // DEFAULT CONSTRUCTOR
     Game() {};
 
     // start() function definition
@@ -30,28 +29,30 @@ public:
     // allows the user to set their name and role for their player in the game
     // and returns that player to main
     Player createPlayer() {
-	std::string name;
+	    std::string name;
     	std::string role;
     	int choice;
     	Player player;
     
     	// prompt user to input a specified name
-   	std::cout << "What's your name, stranger?\n";
+     	std::cout << "What's your name, stranger?\n";
     	std::cin >> name;
     	player.setName(name);
-    
-        // prompt user to input specified role based on the list
-        std::cout << "Hello " << name << std::endl;
-        std::cout << "Choose your role. Your options are:\n";
-        std::cout << "1. Paladin\n";
-	std::cout << "2. Warrior\n";
+
+      // prompt user to input specified role based on the list
+      std::cout << "Hello " << name << std::endl;
+      std::cout << "Choose your role. Your options are:\n";
+      std::cout << "1. Paladin\n";
+     	std::cout << "2. Warrior\n";
     	std::cout << "3. Wizard\n";
-        cin >> choice;
+      cin >> choice;
     	// assess choice
     	switch(choice) {
-        	case 1: player.setRole("Paladin"); break;                                                                                                              case 2: player.setRole("Warrior"); break;
-		case 3: player.setRole("Wizard"); break; 
-		default: cout << "invalid choice." << endl; break;                                                                                             };
+        case 1: player.setRole("Paladin"); break;        
+        case 2: player.setRole("Warrior"); break;
+		    case 3: player.setRole("Wizard"); break; 
+		    default: cout << "invalid choice." << endl; break;                                                                                             
+      };
     	// return temp player object to main
     	return player;
     }

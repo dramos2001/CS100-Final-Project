@@ -14,23 +14,23 @@ using std::cin;
 // MAIN DRIVER CODE STARTS HERE
 int main() {
     Game game;
-    Player player; 
+    Player player;
     int choice = 0;
 
     choice = game.start();
     if (choice == 2) {
         cout << "Thanks for playing, until next time...\n";
         exit(EXIT_SUCCESS);
-
     }
+
     cout << "Wise choice.\n";
  
     player = game.createPlayer();
 
     if (player.getHealth() <= 0) {
-	game.death(); 
+	      game.death(); 
     }
-    
+  
     return 0;
 }
 
