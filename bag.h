@@ -30,6 +30,10 @@ public:
     bool empty() {
         return (item.size() == 0);
     }
+    
+    Item* useItem();
+    Item* showItem();
+    
 private:
     vector<Item> item;  
 };
