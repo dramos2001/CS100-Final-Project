@@ -57,22 +57,22 @@ public:
     void setArmor(int armor) {this->armor = armor; }
     
     virtual void attack(Mob& monster) {
-	      int a = rand() % damage; 
-	      cout << getRole() << " attacked for " << a << " damage.\n";
+        int a = rand() % damage; 
+        cout << getRole() << " attacked for " << a << " damage.\n";
     }
  
     virtual void defend() {
-	      int d = rand() % defense; 
-	      cout << getRole() << " defended itself for " << d << " defense.\n";
+	int d = rand() % defense; 
+        cout << getRole() << " defended itself for " << d << " defense.\n";
     }
  
     void pickItem(const Item& item) { 
-	      cout << "You picked up " << item.getItemName() << endl; 
+	cout << "You picked up " << item.getItemName() << endl; 
         bag->add(item);
     } 
 
     virtual void castSpell() { 
-	      int magic = rand() % damage; 
+	int magic = rand() % damage; 
         cout << getRole() << " casts a spell for " << magic << " damage.\n";
     } 
 };
