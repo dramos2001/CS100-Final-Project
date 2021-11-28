@@ -23,6 +23,21 @@ public:
     virtual void setDescription(string description) {_description = description; }
     virtual void setQuantity(int quantity) {_quantity = quantity; }
 
+    virtual void castSpell() {
+        setItemName("Spell");
+        cout << getItemName() << endl; 
+    }
+
+    virtual void useWeapon() { 
+        setItemName("Weapon");
+        cout << getItemName() << endl; 
+    }    
+
+    virtual void usePotion() {
+        setItemName("Potion");
+        cout << getItemName() << endl; 
+    }
+
 private:
     string _item_name;
     string _description;

@@ -1,10 +1,11 @@
 #ifndef _MOB_HPP_
 #define _MOB_HPP_
 #include <string>
+#include <random>
+#include <iostream>
 using namespace std;
 class Mob {
-    private:
-
+private:
     int health;
     string name;
     int level;
@@ -14,8 +15,7 @@ class Mob {
     int damage;
     int defense;
 
-    public:
-
+public:
     Mob(string name, string type){ //constructor for a mob, values can be changed using setters&getters.
         this->name = name;
         mob_type = type;
@@ -23,8 +23,8 @@ class Mob {
         exp = 0;
         points = 0;
         health = 50;
-        damage = 0;
-        defense = 0;
+        damage = 20;
+        defense = 10;
     }
 
     string getName(){
@@ -68,7 +68,7 @@ class Mob {
         return this->defense; //returns the defense
     }
 
-    int setHealth(int health){
+    void setHealth(int health){
         this->health = health; //sets the health
     }
 
@@ -84,8 +84,17 @@ class Mob {
         return this->damage; //returns the damage
     }
 
-    virtual void attack(){}
-    virtual void defend(){}
+    void takeDamage(int damage) { health -= damage; if (health<0) health=0; }
+
+    virtual void attack(){
+	int a = rand() % damage;
+	cout << getMobType() << " attack for " << a << " damage.\n"; 
+    }
+
+    virtual void defend() {
+	int d = rand() % defense;
+        cout << getMobType() << " defended itself for " << d << ".\n";
+    }
 
 };
 
