@@ -19,6 +19,7 @@ private:
     int damage; 
     int armor;
     int defense;
+    int mana; 
     Bag* bag; 
 
 public: 
@@ -56,7 +57,7 @@ public:
     void setMana(int mana) {this->mana = mana; }
     void setArmor(int armor) {this->armor = armor; }
     
-    virtual void attack(Mob& monster) {
+    virtual void attack() {
         int a = rand() % damage; 
         cout << getRole() << " attacked for " << a << " damage.\n";
     }

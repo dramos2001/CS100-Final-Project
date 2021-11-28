@@ -6,6 +6,7 @@
 // class definitions
 #include "game.hpp"
 #include "Player.hpp"
+#include "mob.h"
 
 // USING STATEMENTS
 using std::cout;
