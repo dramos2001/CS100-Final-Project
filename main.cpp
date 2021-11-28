@@ -19,7 +19,6 @@ int main() {
     srand(time(NULL)); // initialize random seed.
 
     const string monsters[3] = {"mad king", "witch", "dragon"};
-    int randomMob = rand() % 4; 
 
     Game game;
     Player player;
@@ -36,19 +35,23 @@ int main() {
  
     player = game.createPlayer();
 
-    Mob mob(monsters[randomMob], monsters[randomMob]);
-
     if (player.getRole() == "Paladin") {
+	int randomMob = rand() % 4;
+	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
         
     }
     else if (player.getRole() == "Warrior"){ 
+	int randomMob = rand() % 4;
+	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
         
     }
     else if (player.getRole() == "Wizard") {
+	int randomMob = rand() % 4;
+	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Wizard. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
         
