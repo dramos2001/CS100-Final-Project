@@ -78,14 +78,8 @@ public:
     } 
     
     void accessShop(){
-	cout << "Welcome to the shop!" << endl;
-	cout << "Our choice of items are: potions, weapons, and spells!" << endl;
-	cout << "What would you like to buy?"
-	cout << "Type 1 for potions, 2 for weapons, 3 for spells! Press q to quit."	
-
-
-
-}
+	
+    }
 };
 
 
