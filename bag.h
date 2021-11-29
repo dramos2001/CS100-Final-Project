@@ -1,6 +1,9 @@
 #ifndef __bag_hpp__
 #define __bag_hpp__
+
 #include "Item.hpp"
+#include <vector>
+
 class Bag {
 
     private:

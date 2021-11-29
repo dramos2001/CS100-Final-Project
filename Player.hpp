@@ -1,8 +1,9 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
 
+#include <iostream>
 #include <string>
-//#include "bag.h"
+#include "bag.h"
 using namespace std;
 
 class Player
@@ -18,7 +19,7 @@ private:
     int armor;
     int defense;
     int mana;
-    //Bag* items_bag;
+    Bag* items_bag;
 
 public: 
     Player(string name = "", string role = "")
@@ -57,6 +58,21 @@ public:
     virtual void defend() { } 
     void pickItem() { } 
     virtual void castSpell() { } 
+
+    void printStats() {
+        // prints player stats to user for easy readability
+        cout << "\n\nHere are your stats:\n\n";
+        cout << "Name: " << name << " Role: " << role << "\n";
+        cout << "Level: " << level << "\n";
+        cout << "EXP: " << exp << "\n";
+        cout << "Points: " << points << "\n";
+        cout << "Health: " << health << "\n";
+        cout << "Damage: " << damage << "\n";
+        cout << "Armor: " << armor << "\n";
+        cout << "Defense: " << defense << "\n";
+        cout << "Mana: " << mana << "\n";
+
+    }
 
 };
 
