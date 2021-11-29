@@ -110,14 +110,31 @@ public:
     } 
     
     void accessShop(){
-	cout << "Welcome to the shop!" << endl;
-	cout << "Our choice of items are: potions, weapons, and spells!" << endl;
-	cout << "What would you like to buy?"
-	cout << "Type 1 for potions, 2 for weapons, 3 for spells! Press q to quit."	
+	int ans;
+	cout << "Welcome to the Potion shop!" << endl;
+	cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
+	cout << "How many potions would you like to buy?" << endl;
+	cin >> ans;
+	if(ans * 10 > getPoints()){
+	cout << "Sorry, you do not have enough points." << endl;
+        } else {
+	if(ans == 0){
+	break;
+	}
+	cout << "Excellent choice!" << endl;
+	setPoints(getPoints() - (ans * 10));
+	cout << "Your current points is now " << getPoints() << endl;
 
-
-
+	for(unsigned int i = 0; i < ans; i++){
+	bag->add("Potion");	
+	}
+	}
 }
+		
+	
+
+
+
 };
 
 
