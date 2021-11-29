@@ -1,8 +1,11 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
-#include <iostream>
-using namespace std; 
+
 #include <string>
+#include <random>
+#include "bag.h"
+using namespace std;
+
 
 class Player
 {
@@ -16,10 +19,11 @@ private:
     int damage; 
     int armor;
     int defense;
-    int mana;
+    int mana; 
+    Bag* bag; 
 
 public: 
-    Player(string name, string role)
+    Player(string name = "", string role = "")
     {
         this->name = name;
         this->role = role; 
@@ -47,16 +51,33 @@ public:
     void setEXP(int EXP) {this->exp = EXP; }
     void setPoints(int points) {this->points = points; }
 
+    void takeDamage(int d) {health -= d; if (health < 0) health = 0; }
+
     void setHealth(int health) {this->health = health; }
     void setMana(int mana) {this->mana = mana; }
     void setArmor(int armor) {this->armor = armor; }
+    
+    virtual void attack() {
+        int a = rand() % damage; 
+        cout << getRole() << " attacked for " << a << " damage.\n";
+    }
+ 
+    virtual void defend() {
+	int d = rand() % defense; 
+        cout << getRole() << " defended itself for " << d << " defense.\n";
+    }
+ 
+    void pickItem(const Item& item) { 
+	cout << "You picked up " << item.getItemName() << endl; 
+        bag->add(item);
+    } 
 
-    virtual void attack() { } 
-    virtual void defend() { } 
-    void pickItem() { } 
-    virtual void castSpell() { } 
-
+    virtual void castSpell() { 
+	int magic = rand() % damage; 
+        cout << getRole() << " casts a spell for " << magic << " damage.\n";
+    } 
 };
+
 
 
 #endif //__PLAYER_HPP__

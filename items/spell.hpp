@@ -6,16 +6,23 @@
 class Spell : public Item 
 {
 public:
-    Spell() : Item() {_spell = "_spell_"; }
+    Spell() : Item() {_spell = "_spell_"; _description=""; power=40; }
 
     string getItemName() const {return _spell; }
     string getDescription() const {return _description; }
 
-    void castSpell(string spell); 
+    void castSpell() {
+	int m = rand() % power; 
+        power = m; 
+        cout << "Spell cast was ";
+        if (power < 20) cout << " was not really effective. \n";
+        else if (power >= 20)  cout << " was very effective. \n";
+    } 
 
 private:
     string _spell; 
     string _description; 
+    int power;
 };
 
 #endif
