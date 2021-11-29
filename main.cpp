@@ -6,7 +6,7 @@
 // class definitions
 #include "game.hpp"
 #include "Player.hpp"
-#include "mob.h"
+#include "mob.hpp"
 
 // USING STATEMENTS
 using std::cout;
@@ -40,21 +40,107 @@ int main() {
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-        
+       
+	cout << "Do you wish to attack or use bag?\n";
+        cout << "Enter a for attack, b for bag.\n";
+
+        char attOrBag;
+        cin >> attOrBag;
+
+        while (attOrBag != 'a' || attOrBag != 'A' || attOrBag == 'b' || attOrBag == 'B')
+        {
+            if (attOrBag == 'a' || attOrBag == 'A')
+            {
+                player.attack(); //player attacks
+            }
+            else
+            {
+                Bag bag;
+                cout << "You chose to use bag.\n";
+                bag.displayBag();  //show bag
+                cout << "Which item do you wish to use?\n";
+            }
+
+            cout << "Invalid input, please try again.\n";
+            cin >> attOrBag;
+
+
+        }
+
+
+
+
+
+
+
+ 
     }
     else if (player.getRole() == "Warrior"){ 
 	int randomMob = rand() % 4;
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-        
+     
+
+	cout << "Do you wish to attack or use bag?\n";
+        cout << "Enter a for attack, b for bag.\n";
+
+        char attOrBag;
+        cin >> attOrBag;
+
+        while (attOrBag != 'a' || attOrBag != 'A' || attOrBag == 'b' || attOrBag == 'B')
+        {
+            if (attOrBag == 'a' || attOrBag == 'A')
+            {
+                player.attack(); //player attacks
+            }
+            else
+            {
+                Bag bag;
+                cout << "You chose to use bag.\n";
+                bag.displayBag();  //show bag
+                cout << "Which item do you wish to use?\n";
+            }
+
+            cout << "Invalid input, please try again.\n";
+            cin >> attOrBag;
+
+
+        }   
     }
     else if (player.getRole() == "Wizard") {
 	int randomMob = rand() % 4;
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Wizard. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-        
+     
+
+
+	cout << "Do you wish to attack or use bag?\n";
+        cout << "Enter a for attack, b for bag.\n";
+
+        char attOrBag;
+        cin >> attOrBag;
+
+        while (attOrBag != 'a' || attOrBag != 'A' || attOrBag == 'b' || attOrBag == 'B')
+        {
+            if (attOrBag == 'a' || attOrBag == 'A')
+            {
+                player.attack(); //player attacks
+            }
+            else
+            {
+                Bag bag;
+                cout << "You chose to use bag.\n";
+                bag.displayBag();  //show bag
+                cout << "Which item do you wish to use?\n";
+            }
+
+            cout << "Invalid input, please try again.\n";
+            cin >> attOrBag;
+
+
+        }   
     }
     
 
