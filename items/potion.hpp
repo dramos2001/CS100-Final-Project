@@ -17,7 +17,7 @@ public:
 	cout << " used potion. " << _description << endl;
 	player->setHealth(player->getHealth() + 20);
 	
-	if([player->getHealth() > 100) {
+	if(player->getHealth() > 100) {
 	player->setHealth(100);
 	}
 	
