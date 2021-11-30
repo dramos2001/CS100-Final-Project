@@ -5,8 +5,8 @@
 #define __GAME_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "game.hpp"
-#include "Player.hpp"
+#include "../game.hpp"
+#include "../Player.hpp"
 
 
 

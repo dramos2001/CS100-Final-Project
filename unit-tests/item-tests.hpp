@@ -5,7 +5,7 @@
 #define __ITEM_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "item.hpp"
+#include "../Item.hpp"
 #include <string>
 
 // constructor test 1
@@ -114,7 +114,7 @@ TEST(ItemTests, SetQuantityTest2) {
 }
 
 // setQuantity test 1
-TEST(ItemTests, SetQuantityTest1) {
+TEST(ItemTests, SetQuantityTest3) {
     Item items("Weapon");
     items.setQuantity(100);
     EXPECT_EQ(items.getQuantity(), 100);

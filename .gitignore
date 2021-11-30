@@ -1,1 +1,8 @@
 main.exe
+run
+test
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+lib/

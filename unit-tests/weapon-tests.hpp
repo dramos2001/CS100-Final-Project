@@ -2,7 +2,7 @@
 #define __WEAPON_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "items/weapon.hpp"
+#include "../items/weapon.hpp"
 
 TEST(WeaponsTests, ConstructorTest) {
     Weapon weapon;
@@ -26,10 +26,9 @@ TEST(WeaponsTests, GetQuantityTest) {
     EXPECT_EQ(weapon.getQuantity(), 2);
 }
 
-TEST(WeaponsTests, UseWeaponTest) {
-    Weapon weapon;
-    
-}
+//TEST(WeaponsTests, UseWeaponTest) {
+//    Weapon weapon;  
+//}
 
 
 #endif
