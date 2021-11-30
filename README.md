@@ -7,7 +7,7 @@
  * In our game, there will be a main character who is given health, level, and experience at the start. This character will perform specific tasks/actions such as attack, cast spells, heal, defend, etc. The user will input what they want their player to do based on the circumstances set in the game. The inputs will be recorded and executed and the game will output what happens as a result of their inputs. For example, lets say the user is fighting a mob. They want to attack the mob, so they input "attack" or something similar. The player will then attack the mob and the damage done on them will be outputted back to the user. The user will also be able to input decisions that relate to the story. For examle, the player reaches a fork in the road. The game will ask (output to) the user if they want to go right or left. The user inputs "left" and they go left and are met with a mob. This goes on throughout the majority of the game. The decisions and outcomes will be displayed to the user and will progress the plot further. The character has certain attributes, such as health and mana, that are modified by the gameplay and inputs from the player. For instance, the character's health will be deducted when attacked and their level will be increased when completing a certain task.
  
 ## Class Diagram
-![image](https://user-images.githubusercontent.com/56313109/140868150-e9fd2c09-3333-4f7e-8ed1-d888b4fc9d8e.png)
+![image](https://user-images.githubusercontent.com/56313109/144044210-98c122b3-46b7-42b9-8392-f9bebf827e30.png)
  Description of the UML Diagram:
  * Player class that contains attributes, actions, etc. of the player
    * 3 different player types that inherit from the Player class, they are: paladin, warrior, and wizard
