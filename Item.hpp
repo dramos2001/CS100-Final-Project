@@ -38,7 +38,7 @@ public:
         cout << getItemName() << endl; 
     }
 
-private:
+protected:
     string _item_name;
     string _description;
     int _quantity; 
