@@ -7,36 +7,29 @@
  * In our game, there will be a main character who is given health, level, and experience at the start. This character will perform specific tasks/actions such as attack, cast spells, heal, defend, etc. The user will input what they want their player to do based on the circumstances set in the game. The inputs will be recorded and executed and the game will output what happens as a result of their inputs. For example, lets say the user is fighting a mob. They want to attack the mob, so they input "attack" or something similar. The player will then attack the mob and the damage done on them will be outputted back to the user. The user will also be able to input decisions that relate to the story. For examle, the player reaches a fork in the road. The game will ask (output to) the user if they want to go right or left. The user inputs "left" and they go left and are met with a mob. This goes on throughout the majority of the game. The decisions and outcomes will be displayed to the user and will progress the plot further. The character has certain attributes, such as health and mana, that are modified by the gameplay and inputs from the player. For instance, the character's health will be deducted when attacked and their level will be increased when completing a certain task.
  
 ## Class Diagram
-![image](https://user-images.githubusercontent.com/56313109/140868150-e9fd2c09-3333-4f7e-8ed1-d888b4fc9d8e.png)
+![image](https://user-images.githubusercontent.com/56313109/144044210-98c122b3-46b7-42b9-8392-f9bebf827e30.png)
  Description of the UML Diagram:
  * Player class that contains attributes, actions, etc. of the player
    * 3 different player types that inherit from the Player class, they are: paladin, warrior, and wizard
    * Player types have specific attributes and moves they can do
  * Bag class acts as a container class to store the items the player has such as weapons
    * This class has a composition relationship with Player class
-   * Bag contains data of type Item class; composition relationship between Bag and Item
+   * Bag contains data of type Item class; composition relationship between Bag and Item (
    * 3 item types that inherit from Item: Spell, Potion, and Weapon, each with their own attributes
  * Mob class contains attributes, actions, etc. of mobs in the game
-   * Main mob type will be dragon
- * Shop class contains items to buy
- * Quest class has different levels that player (start from level 1 and once completes a level, gets points and can exchange to buy items at Shop
+   * Main mob type will be dragon (there are other mobs like witch) 
+ * accessShop method in Player class contains potions to buy, with points earned. 
+ * Game class starts the program, creates a Player/role, and has an end method (if player has won/lost). 
 
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design patterns did you use? For each design pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design patterns you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your TA you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
+ ## Phase III
+ * What design patterns did you use? For each design pattern you must explain in 4-5 sentences: 
+    * The design patterns we chose were strategy and composite. 
+ * Why did you pick this pattern? And what feature did you implement with it? 
+    * For Strategy, we decided to use it to create the different items as (concrete strategies) and then have a Bag class that configures a concrete strategy object and defines an interface to access its data. So for item class we inherit getItemName and getDescription, and then for (Spell, Weapon, Potion) class, it inherits a method designed for its own usage like Spell has castSpell(), Weapon has useWeapon(). 
+    * For Composite, we chose this since it made user interaction easier and it made it easy to define behavior of children classes (Wizard, Warrior, Paladin). Doing the strategy was a bit difficult when making a strategy object in the code, but for composite it was easier with adding any additional components. 
+ * How did the design pattern help you write better code?
+    * For Strategy, we had strategy methods with Item (mainly Potion). Our classes all flow with each other as it was a family of algorithms. 
+    * For Composite, we made use of inheritance and use of recursively run a behavior over all components of an object. We also made an interface that allowed us to createPlayer and start and end the program using Player as an object. 
  
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
@@ -47,8 +40,11 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > 
  ## Installation/Usage
  > Instructions on installing and running your application
+ > 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > 
  

@@ -24,7 +24,7 @@ int main() {
     Player player;
     Bag bag;
     int choice = 0;
-
+    
     choice = game.start();
     if (choice == 2) {
         cout << "Thanks for playing, until next time...\n";
@@ -50,7 +50,7 @@ int main() {
     game.battleMob(player, mob3, bag);
     
     if (player.getHealth() > 0) {
-	    game.victory();
+	      game.victory();
         player.printStats();
     }
     if (player.getHealth() <= 0) {
