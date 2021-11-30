@@ -1,5 +1,5 @@
-#ifndef _MOB_HPP_
-#define _MOB_HPP_
+#ifndef _MOB_H_
+#define _MOB_H_
 #include <string>
 #include <random>
 #include <iostream>
