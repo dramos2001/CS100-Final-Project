@@ -72,13 +72,12 @@ public:
 
         bool flag = true;
         while(flag) {
-            if (ans != 'Y' || ans != 'N' || ans != 'y' || ans != 'n') {
-                cout << "input the correct character!" << endl;
-                cin >> ans;
-		flag = false; 
+            if (ans == 'Y' || ans == 'N' || ans == 'y' || ans == 'n') {
+                flag = false;
             }
             else {
-                flag = false;
+                std::cout << "Input the correct character!" << std::endl;
+                std::cin >> ans;
             }
         }
 
