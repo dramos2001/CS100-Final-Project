@@ -18,7 +18,7 @@ TEST(BagTest, DisplayBagTest1) {
     Item item("Potion");
     bag.add(item);
     bag.displayBag(output);
-    EXPECT_EQ(output.str(), "Your bag contains: \n" );
+    EXPECT_EQ(output.str(), "Your bag contains: 1 potions\n" );
 }
 
 // displayBag test 2
@@ -32,7 +32,7 @@ TEST(BagTest, DisplayBagTest2) {
     bag.add(potion);
     bag.add(weapon);
     bag.displayBag(output);
-    EXPECT_EQ(output.str(), "");
+    EXPECT_EQ(output.str(), "Your bag contains: 3 potions\n");
 }
 
 // displayBag test 3
@@ -40,7 +40,7 @@ TEST(BagTest, DisplayBagTest3) {
     Bag bag;
     std::ostringstream output;
     bag.displayBag(output);
-    EXPECT_EQ(output.str(), "Your bag contains: \n \n");
+    EXPECT_EQ(output.str(), "Your bag contains: 0 potions\n");
 }
 
 // add test 1

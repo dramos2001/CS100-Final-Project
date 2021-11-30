@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 
 #include "player-tests.hpp"
-//#include "game-tests.hpp"
+#include "game-tests.hpp"
 #include "bag-tests.hpp"
 #include "item-tests.hpp"
 #include "mob-tests.hpp"
