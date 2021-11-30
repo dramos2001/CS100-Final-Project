@@ -63,8 +63,8 @@ public:
 
     virtual void attack(Mob& mob) 
     {
-        while (this->getHealth() > 0 && mob.getHealth() > 0)
-        {
+     //   while (this->getHealth() > 0 && mob.getHealth() > 0)
+     //   {
             cout << "Your health:  " << this->getHealth() << endl;
             cout << "Your mana:  " << this->getMana() << endl;
             cout << "-------------------------------------------\n";
@@ -88,8 +88,8 @@ public:
                 }
              
             
-        }
-	cout << "Total points rewarded: " << this->getPoints() << endl; 
+       // }
+	//cout << "Total points rewarded: " << this->getPoints() << endl; 
 
     }
   
@@ -118,39 +118,27 @@ public:
     
     void accessShop(Bag& bag){
 	    int ans;
-	    int amt = 0; 
 	    cout << "Welcome to the Potion shop!" << endl;
 	    cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
 	    cout << "How many potions would you like to buy?" << endl;
 	    cin >> ans;
 	    if(ans * 10 > getPoints()){
 	      cout << "Sorry, you do not have enough points." << endl;
-      } else {
+      	    } else {
 	        if(ans == 0){
 		    cout << "must input a quantity > than 0. " << endl;
 	        }
 	        cout << "Excellent choice!" << endl;
 	        setPoints(getPoints() - (ans * 10));
-	        cout << "Your current points is now " << getPoints() << endl;
-<<<<<<< HEAD
-
-	        for(unsigned int i = 0; i < ans; i++){
-		    amt++; 
-		    cout << "Potion: " << amt << endl; 
-		    //bag[i]->add("Potion");
-		    //Item* potion = new Potion();
-	    	    //bag[i]->add(potion);	
-	        }
-=======
-		
-		    Item potion;
-	    	    bag.add(potion);	
-	        
->>>>>>> 502b01c0c17edfa5e40f20354948a933a684b74b
-	    }
+	        cout << "Your current points is now " << getPoints() << endl;	
+		    
+		Item potion;
+	    	bag.add(potion);
+	    
+    	    }
     }
 
-    void usePotion(Bag& bag) {
+    void usePotion(Bag bag) {
         if(bag.Size() > 0) {
             cout << " used potion. ";
             setHealth(getHealth() + 20);

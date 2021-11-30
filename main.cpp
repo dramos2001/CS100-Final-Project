@@ -98,6 +98,10 @@ int main() {
 		cin >> attOrBag;
                
             }
+	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
+		cout << "Do you want to attack or continue using bag? a/b" << endl;
+                cin >> attOrBag;
+	    }
 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death(); 
@@ -105,8 +109,10 @@ int main() {
 	    }
 	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
 	    	game.victory();
+		cout << "Total points rewarded: " << player.getPoints() << endl;
 	    	break;
-	    } 
+	    }
+	    //cout << "Total points rewarded: " << player.getPoints() << endl; 
 
         }
  
@@ -170,18 +176,24 @@ int main() {
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
 		cin >> attOrBag;
             }
+	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
+                cout << "Do you want to attack or continue using bag? a/b" << endl;
+                cin >> attOrBag;
+            }
+
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0 ) {
 		game.death();
 		break;
 	    }
 	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
                 game.victory();
+		cout << "Total points rewarded: " << player.getPoints() << endl;
                 break;
             }
             //cout << "Invalid input, please try again.\n";
             //cin >> attOrBag;
 
-
+	    //cout << "Total points rewarded: " << player.getPoints() << endl; 
         }   
     }
   
@@ -247,6 +259,10 @@ int main() {
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
 		cin >> attOrBag;
             }
+	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
+                cout << "Do you want to attack or continue using bag? a/b" << endl;
+                cin >> attOrBag;
+            }
 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death();
@@ -254,8 +270,11 @@ int main() {
 	    }
 	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
                 game.victory();
+		cout << "Total points rewarded: " << player.getPoints() << endl;
                 break;
             }
+
+	    //cout << "Total points rewarded: " << player.getPoints() << endl;
 
         }
     } 
