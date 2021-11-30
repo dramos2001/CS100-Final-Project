@@ -2,7 +2,7 @@
 #define __MOB_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "mob.hpp"
+#include "mob.h"
 
 // getname test 1
 TEST(MobTests, GetNameTest1) {
