@@ -114,8 +114,7 @@ public:
                     player.usePotion(bag);
                 }
 
-                cout << "Do you want to attack or continue using bag? a/b" << endl;
-                cin >> attOrBag;
+                
             }
 
 	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
