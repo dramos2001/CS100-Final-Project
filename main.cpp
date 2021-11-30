@@ -69,7 +69,7 @@ int main() {
             	cin >> attOrBag;
 		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
 	    }
-	    if (player.getHealth() <= 0) {
+	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death(); 
 		break; 
 	    }
