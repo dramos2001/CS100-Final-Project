@@ -2,13 +2,13 @@
 #define __WARRIOR_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "roles/warrior.hpp"
+#include "../roles/warrior.hpp"
 
 TEST(WarriorTests, ConstructorTest) {
     Warrior warrior;
     EXPECT_EQ(warrior.getRole(), "Warrior");
     EXPECT_EQ(warrior.getHealth(), 100);
-    EXPECT_EQ(warrior.getMana(), 100);
+    EXPECT_EQ(warrior.getMana(), 20);
     //EXPECT_EQ(warrior.getArmor(), 50);
 }
 

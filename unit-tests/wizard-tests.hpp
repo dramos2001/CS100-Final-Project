@@ -2,7 +2,7 @@
 #define __WIZARD_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "roles/wizard.hpp"
+#include "../roles/wizard.hpp"
 
 TEST(WizardTests, ConstructorTest) {
     Wizard wizard;

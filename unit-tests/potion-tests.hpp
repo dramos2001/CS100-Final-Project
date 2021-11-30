@@ -1,8 +1,8 @@
 #ifndef __POTION_TESTS_HPP__
 #define __POTION_TESTS_HPP__
 
-#include "gtest/gtesth.h"
-#include "items/potion.hpp"
+#include "gtest/gtest.h"
+#include "../items/potion.hpp"
 
 // constuctor test
 TEST(PotionTests, ConstructorTest1) {
@@ -29,14 +29,6 @@ TEST(PotionTests, GetQuantityTest) {
     Potion potion;
     EXPECT_EQ(potion.getQuantity(), 5);
 }
-
-// usePotion test
-TEST(PotionTests, UsePotionTest) {
-    Potion potion;
-    EXPECT_EQ(potion.usePotion(), "used potion. Healed 20 HP\n");
-    EXPECT_EQ(potion.usePotion(), potion.getQuantity() - 1);
-}
-
 
 
 #endif
