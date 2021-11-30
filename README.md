@@ -39,8 +39,22 @@
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
- > 
+ * Main program with major input/output of the game
+ ![main-game1](https://user-images.githubusercontent.com/56313109/144098065-15d18ebf-21fa-4bad-9727-75805e3898b9.png)
+ ![main-game2](https://user-images.githubusercontent.com/56313109/144098118-6317edff-66a5-4f7d-b62d-9a0c9fe93f09.png)
+ ![main-game3](https://user-images.githubusercontent.com/56313109/144098171-ec4cd86e-6a71-40b1-961d-f7385839d36e.png)
+ ![main-game4](https://user-images.githubusercontent.com/56313109/144098211-e0dcb363-d51c-4e24-9391-14cc2a99993e.png)
+ ![main-game5](https://user-images.githubusercontent.com/56313109/144098226-95e71f02-1aed-4f76-ab1c-be708e5e11c6.png)
+ ![main-gamefinal](https://user-images.githubusercontent.com/56313109/144098255-15061c40-d38e-4b84-8165-48050ad13cf7.png)
+
+ * Valgrind after executing main program
+ ![valgrind](https://user-images.githubusercontent.com/56313109/144098501-b277ba54-81de-4404-bb6a-22340b4ccc2b.png)
+
+ * Execution after running unit tests (tests that fail fail on purpose)
+ ![unit-tests1](https://user-images.githubusercontent.com/56313109/144098582-c2569c82-cb90-4a16-9934-1b5b75e7a466.png)
+ ![unit-tests2](https://user-images.githubusercontent.com/56313109/144098612-5df4a9d0-7f30-42bb-a91d-7cf35911c500.png)
+ ![unit-tests3](https://user-images.githubusercontent.com/56313109/144098641-08a4eeb6-70bd-4b18-80df-b73f880cf6c9.png)
+
  ## Installation/Usage
   Usage of our project is simple and straightforward. Clone the repository onto your machine, making sure to do so recursively since it contains the googletest submodule. Then     you just need to run the main executable file and you are right into the game. If you want to run the unit tests of our project, you can run the test executable.
  ## Testing
