@@ -6,17 +6,33 @@
 
 #include "gtest/gtest.h"
 #include "Player.hpp"
+#include <string>
 
 // CONSTRUCTOR TEST 1
 // Tests constructor with parameters
 TEST(PlayerTest, ConstructorTest) {
     Player player("John Doe", "Wizard");
-    
+    EXPECT_EQ(player.getName(), "John Doe");
+    EXPECT_EQ(player.getRole(), "Wizard");
+    EXPECT_EQ(player.getLevel(), 1);
+    EXPECT_EQ(player.getEXP(), 0);
+    EXPECT_EQ(player.getPoints(), 0);
+    EXPECT_EQ(player.getHealth(), 50);
+    EXPECT_EQ(player.getMana(), 0);
+    // might need to add more test cases
 }
 
 // CONSTRUCTOR TEST 2
 TEST(PlayerTest, ConstructorTest) {
-    
+    Player player;
+    EXPECT_EQ(player.getName(), "");
+    EXPECT_EQ(player.getRole(), "");
+    EXPECT_EQ(player.getLevel(), 1);
+    EXPECT_EQ(player.getEXP(), 0);
+    EXPECT_EQ(player.getPoints(), 0);
+    EXPECT_EQ(player.getHealth(), 50);
+    EXPECT_EQ(player.getMana(), 0);
+    // might need to add more test cases here as well
 }
 
 // getRole test 1

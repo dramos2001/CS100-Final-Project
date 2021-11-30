@@ -6,5 +6,7 @@
 
 #include "gtest/gtest.h"
 #include "game.hpp"
+#include "Player.hpp"
+
 
 #endif

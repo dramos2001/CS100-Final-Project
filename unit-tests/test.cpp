@@ -7,6 +7,7 @@
 // #include "bag-tests.hpp"
 // #include "item-tests.hpp"
 // #include "main-tests.hpp"
+// #include "mob-tests.hpp"
 
 int main(int argc, char* argv[])
 {

@@ -1,5 +1,5 @@
-#ifndef _MOB_HPP_
-#define _MOB_HPP_
+#ifndef _MOB_H_
+#define _MOB_H_
 #include <string>
 #include <random>
 #include <iostream>
@@ -60,7 +60,7 @@ public:
         return this->points; //returns the points
     }
 
-    void setDefence(int defense){
+    void setDefense(int defense){
         this->defense = defense; //sets the defense
     }
 
