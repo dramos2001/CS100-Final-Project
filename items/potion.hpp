@@ -2,6 +2,7 @@
 #define __POTION_HPP__
 
 #include "../Item.hpp"
+#include "Player.hpp"
 using namespace std;
 class Potion : public Item
 {
