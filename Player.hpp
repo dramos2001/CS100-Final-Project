@@ -62,7 +62,6 @@ public:
 
     virtual void attack() 
     {
-        Mob mob;
         while (this->getHealth() > 0 && mob->getHealth() > 0)
         {
             cout << "Your health:  " << this->getHealth() << endl;
@@ -105,7 +104,6 @@ public:
                 this->takeDamage(mob.getDamage()/4);
                 cout << "Your current health: " << this->getHealth() << endl;
             }
-        
     
     
     }
