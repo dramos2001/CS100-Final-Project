@@ -23,13 +23,13 @@
 
  ## Phase III
  * What design patterns did you use? For each design pattern you must explain in 4-5 sentences: 
-    The design patterns we chose were strategy and composite. 
+    * The design patterns we chose were strategy and composite. 
  * Why did you pick this pattern? And what feature did you implement with it? 
-    For Strategy, we decided to use it to create the different items as (concrete strategies) and then have a Bag class that configures a concrete strategy object and defines an interface to access its data. So for item class we inherit getItemName and getDescription, and then for (Spell, Weapon, Potion) class, it inherits a method designed for its own usage like Spell has castSpell(), Weapon has useWeapon(). 
-    For Composite, we chose this since it made user interaction easier and it made it easy to define behavior of children classes (Wizard, Warrior, Paladin). Doing the strategy was a bit difficult when making a strategy object in the code, but for composite it was easier with adding any additional components. 
+    * For Strategy, we decided to use it to create the different items as (concrete strategies) and then have a Bag class that configures a concrete strategy object and defines an interface to access its data. So for item class we inherit getItemName and getDescription, and then for (Spell, Weapon, Potion) class, it inherits a method designed for its own usage like Spell has castSpell(), Weapon has useWeapon(). 
+    * For Composite, we chose this since it made user interaction easier and it made it easy to define behavior of children classes (Wizard, Warrior, Paladin). Doing the strategy was a bit difficult when making a strategy object in the code, but for composite it was easier with adding any additional components. 
  * How did the design pattern help you write better code?
-    For Strategy, we had strategy methods with Item (mainly Potion). Our classes all flow with each other as it was a family of algorithms. 
-    For Composite, we made use of inheritance and use of recursively run a behavior over all components of an object. We also made an interface that allowed us to createPlayer and start and end the program using Player as an object. 
+    * For Strategy, we had strategy methods with Item (mainly Potion). Our classes all flow with each other as it was a family of algorithms. 
+    * For Composite, we made use of inheritance and use of recursively run a behavior over all components of an object. We also made an interface that allowed us to createPlayer and start and end the program using Player as an object. 
  
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
