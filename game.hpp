@@ -51,8 +51,8 @@ public:
     	switch(choice) {
         	case 1: player.setRole("Paladin"); break;        
         	case 2: player.setRole("Warrior"); break;
-		case 3: player.setRole("Wizard"); break; 
-		default: cout << "invalid choice." << endl; break;                                                                                             
+            case 3: player.setRole("Wizard"); break; 
+            default: cout << "invalid choice." << endl; break;                                                                                             
      	};
     	
 	// return temp player object to main
@@ -60,8 +60,8 @@ public:
     }
 
     void victory() {
-	cout << "You win! Congratulations on beating the quest! \n";
-	return;
+        cout << "You win! Congratulations on beating the quest! \n";
+        return;
     }
 
     void death() {

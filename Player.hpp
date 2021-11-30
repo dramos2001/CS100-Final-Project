@@ -4,7 +4,6 @@
 #include <string>
 #include <random>
 #include "bag.h"
-#include "Player.hpp"
 #include "mob.h"
 #include "items/potion.hpp"
 using namespace std;
