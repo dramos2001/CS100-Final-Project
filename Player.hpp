@@ -89,6 +89,7 @@ public:
              
             
         }
+	cout << "Total points rewarded: " << this->getPoints() << endl; 
 
     }
   
