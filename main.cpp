@@ -22,11 +22,11 @@ int main() {
 
     Game game;
     Player player;
-
+    Bag bag;
     //player.accessShop();  
 
     int choice = 0;
-
+    
     choice = game.start();
     if (choice == 2) {
         cout << "Thanks for playing, until next time...\n";
@@ -42,8 +42,27 @@ int main() {
         Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-       
-	    cout << "Do you wish to attack or use bag?\n";
+
+	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+	char ans;
+	cin >> ans;
+	bool flag = true;
+	while(flag){
+	if(ans == 'Y' || ans == 'N'){
+	flag = false;
+	} else {
+	cout << "input the correct character!" << endl;
+	cin >> ans;
+	}
+
+	}
+
+	if(ans == 'Y'){
+	player.accessShop(bag);
+	}
+			
+	cout << "Do you wish to attack or use bag?\n";
+
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
@@ -58,17 +77,27 @@ int main() {
 	   
             else
             {
-                Bag bag;
                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag
-                //cout << "Which item do you wish to use?\n";
+		cout << "Would you like to use a potion? Y/N" << endl;
+		bool temp = true;
+		char answer;
+		cin >> answer;
+		if(answer == 'Y' || answer == 'N'){
+		temp = false;
+		} else {
+		cout << "input the correct character!" << endl;
+		cin >> answer;
+		}
+		if(ans == 'Y'){
+			player.usePotion(bag);
+		}
+
+		cout << "Do you want to attack or continue using bag? a/b" << endl;
+		cin >> attOrBag;
+               
             }
-	   
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 		
-            	cout << "you're still alive. continue attacking.\n";
-            	cin >> attOrBag;
-		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
-	    }
+
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death(); 
 		break; 
@@ -76,17 +105,38 @@ int main() {
 	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
 	    	game.victory();
 	    	break;
-	    }
+	    } 
 
         }
  
     }
+  
     else if (player.getRole() == "Warrior"){ 
         int randomMob = rand() % 4;
         Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-	    cout << "Do you wish to attack or use bag?\n";
+
+	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+	char ans;
+	cin >> ans;
+	bool flag = true;
+	while(flag){
+	if(ans == 'Y' || ans == 'N'){
+	flag = false;
+	} else {
+	cout << "input the correct character!" << endl;
+	cin >> ans;
+	}
+
+	}
+
+	if(ans == 'Y'){
+	player.accessShop(bag);
+	}
+     
+	cout << "Do you wish to attack or use bag?\n";
+
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
@@ -100,17 +150,25 @@ int main() {
             }
             else
             {
-                Bag bag;
                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag
-                //cout << "Which item do you wish to use?\n";
-            }
+		cout << "Would you like to use a potion? Y/N" << endl;
+		bool temp = true;
+		char answer;
+		cin >> answer;
+		if(answer == 'Y' || answer == 'N'){
+		temp = false;
+		} else {
+		cout << "input the correct character!" << endl;
+		cin >> answer;
+		}
+		if(ans == 'Y'){
+			player.usePotion(bag);
+		}
 
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 
-            	cout << "you're still alive. continue attacking..\n";
-            	cin >> attOrBag;
-		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
-	    }
+		cout << "Do you want to attack or continue using bag? a/b" << endl;
+		cin >> attOrBag;
+            }
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0 ) {
 		game.death();
 		break;
@@ -125,12 +183,30 @@ int main() {
 
         }   
     }
+  
     else if (player.getRole() == "Wizard") {
 	int randomMob = rand() % 4;
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Wizard. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-    
+    	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+	char ans;
+	cin >> ans;
+	bool flag = true;
+	while(flag){
+	if(ans == 'Y' || ans == 'N'){
+	flag = false;
+	} else {
+	cout << "input the correct character!" << endl;
+	cin >> ans;
+	}
+
+	}
+
+	if(ans == 'Y'){
+	player.accessShop(bag);
+	}
+     
 	cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
@@ -145,17 +221,26 @@ int main() {
             }
             else
             {
-                Bag bag;
-                cout << "You chose to use bag.\n";
+                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag
-                //cout << "Which item do you wish to use?\n";
+		cout << "Would you like to use a potion? Y/N" << endl;
+		bool temp = true;
+		char answer;
+		cin >> answer;
+		if(answer == 'Y' || answer == 'N'){
+		temp = false;
+		} else {
+		cout << "input the correct character!" << endl;
+		cin >> answer;
+		}
+		if(ans == 'Y'){
+			player.usePotion(bag);
+		}
+
+		cout << "Do you want to attack or continue using bag? a/b" << endl;
+		cin >> attOrBag;
             }
 
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) {
-            	cout << "you're still alive. continue attacking.\n";
-            	cin >> attOrBag;
-		if (attOrBag == 'q' || attOrBag == 'Q') {break; }
-	    } 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death();
 		break; 
@@ -164,18 +249,10 @@ int main() {
                 game.victory();
                 break;
             }
-            //cout << "Invalid input, please try again.\n";
-            //cin >> attOrBag;
-
-        }   
-    }
+           
+        }
+    } 
     
-    if (player.getHealth() > 0) {
-	game.victory();
-    }
-    if (player.getHealth() <= 0) {
-          game.death(); 
-    }
   
     return 0;
 }
