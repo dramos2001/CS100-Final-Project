@@ -22,7 +22,7 @@ private:
     int armor;
     int defense;
     int mana;
-    //Bag* items_bag;
+   // Bag* items_bag;
 
 public:
     Player(string name = "", string role = "")
@@ -113,15 +113,10 @@ public:
     
     }
   
-    //void pickItem() 
-    //{ 
-    //    cout << "You picked an item!\n";
-    //}
-  
     virtual void castSpell() { }
 
     
-    void accessShop(){
+    void accessShop(Bag& bag){
 	    int ans;
 	    cout << "Welcome to the Potion shop!" << endl;
 	    cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
@@ -131,31 +126,30 @@ public:
 	      cout << "Sorry, you do not have enough points." << endl;
       } else {
 	        if(ans == 0){
-	    	    cout << "must input a quantity > than 0. " << endl; 
+		    cout << "must input a quantity > than 0. " << endl;
 	        }
 	        cout << "Excellent choice!" << endl;
 	        setPoints(getPoints() - (ans * 10));
 	        cout << "Your current points is now " << getPoints() << endl;
-
-	        for(unsigned int i = 0; i < ans; i++){
-		    Item* potion = new Potion();
-	    	    //bag[i]->add(potion);	
-	        }
+		
+		    Item potion;
+	    	    bag.add(potion);	
+	        
 	    }
     }
 
-    void usePotion(Potion p) {
-        if(p.getQuantity() > 0) {
-            cout << " used potion. " << p.getDescription() << endl;
+    void usePotion(Bag& bag) {
+        if(bag.Size() > 0) {
+            cout << " used potion. ";
             setHealth(getHealth() + 20);
 
             if(getHealth() > 100) {
                 setHealth(100);
             }
 
-            p.setQuantity(p.getQuantity()-1);
+            bag.remove();
             cout << "Your total health is " << getHealth() << "." << endl;
-            cout << "You have " << p.getQuantity() << " potions left." << endl;
+            cout << "You have " << bag.Size() << " potions left." << endl;
         } else {
             cout << "You have no remaining potions left!" << endl;
         }
