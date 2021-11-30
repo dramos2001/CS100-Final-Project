@@ -18,12 +18,12 @@ public:
     } 
 
     void defend() {
-	int d = (rand() % _armor);
+	    int d = (rand() % _armor);
         cout << getRole() << " defended itself for " << _armor << " damage.\n";
     }
 
     void castSpell() {
-	Item spell = new Spell();
+	    Item spell = new Spell();
         cout << spell->getItemName << " does damage for " << spell.castSpell() << endl;
     } 
 

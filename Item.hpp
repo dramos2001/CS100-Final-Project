@@ -23,22 +23,17 @@ public:
     virtual void setDescription(string description) {_description = description; }
     virtual void setQuantity(int quantity) {_quantity = quantity; }
 
-    virtual void castSpell() {
+    void castSpell() {
         setItemName("Spell");
         cout << getItemName() << endl; 
     }
 
-    virtual void useWeapon() { 
+    void useWeapon() { 
         setItemName("Weapon");
-        cout << getItemName() << endl; 
-    }    
-
-    virtual void usePotion() {
-        setItemName("Potion");
         cout << getItemName() << endl; 
     }
 
-private:
+protected:
     string _item_name;
     string _description;
     int _quantity; 
