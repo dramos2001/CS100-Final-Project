@@ -60,7 +60,7 @@ public:
         return this->points; //returns the points
     }
 
-    void setDefence(int defense){
+    void setDefense(int defense){
         this->defense = defense; //sets the defense
     }
 

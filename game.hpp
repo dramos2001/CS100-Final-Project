@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h> // uses rand and srand
 #include "Player.hpp"
-#include "mob.h"
+#include "mob.hpp"
 
 class Game {
 public:
