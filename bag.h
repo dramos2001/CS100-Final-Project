@@ -22,22 +22,21 @@ public:
 
     void add(const Item& it) {
         item.push_back(it);
-    } 
-
-    void remove() {
-        item.pop_back();
     }
+    //void add(string it) {
+    //    Item* i = new Item(it);
+    //    item.push_back(i);
+    //    _size++; 
+    //    items[_size] = &i;    
+    //}
+    void remove() {item.pop_back();}
+    bool empty() {  return (item.size() == 0);}
 
-    bool empty() {
-        return (item.size() == 0);
-    }
-
-    Item* useItem();
-
-    Item* showItem();
+    int Size() {return item.size(); }
 
 private:
-    vector<Item> item;  
+    vector<Item> item;
+//   
 };
 
 #endif

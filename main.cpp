@@ -6,7 +6,7 @@
 // class definitions
 #include "game.hpp"
 #include "Player.hpp"
-#include "mob.hpp"
+#include "mob.h"
 
 // USING STATEMENTS
 using std::cout;
@@ -22,7 +22,9 @@ int main() {
 
     Game game;
     Player player;
-
+    player.accessShop(); 
+    return 0; 
+/*
     int choice = 0;
 
     choice = game.start();
@@ -66,13 +68,6 @@ int main() {
 
 
         }
-
-
-
-
-
-
-
  
     }
     else if (player.getRole() == "Warrior"){ 
@@ -148,6 +143,6 @@ int main() {
 	      game.death(); 
     }
   
-    return 0;
+    return 0; */
 }
 

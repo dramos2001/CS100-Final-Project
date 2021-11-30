@@ -3,7 +3,9 @@
 
 #include <string>
 #include <random>
-#include "bag.hpp"
+#include "bag.h"
+#include "items/potion.hpp"
+#include "mob.h"
 using namespace std;
 
 
@@ -56,42 +58,41 @@ public:
     void setHealth(int health) {this->health = health; }
     void setMana(int mana) {this->mana = mana; }
     void setArmor(int armor) {this->armor = armor; }
-    
-    virtual void attack() {
-       // int a = rand() % damage; 
-     
-   //cout << getRole() << " attacked for " << a << " damage.\n";
-    cout << "Your health:  " << player.getHealth() << endl;
-    cout << "Your mana:  " << player.getMana() << endl;
-    cout << "-------------------------------------------\n";
-    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-    cout << "You chose to attack!!!\n";
-    // player choose weapon
-    cout << "You have " << weapon.getQuantity() << " weapons.\n";
+
+
+    virtual void attack(Mob mob) {
+       // int a = rand() % damage;  
+       //cout << getRole() << " attacked for " << a << " damage.\n";
+       cout << "Your health:  " << getHealth() << endl;
+       cout << "Your mana:  " << getMana() << endl;
+       cout << "-------------------------------------------\n";
+       /*cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+       cout << "You chose to attack!!!\n";
+       // player choose weapon
+       cout << "You have " << weapon.getQuantity() << " weapons.\n";
           for (int i = 0; i < weapon.getQuantity(); i++)
            {
    	      cout << "Weapon " << i + 1 << ": " << weapon.getDescription() << endl;
            }
-              cout << "Which weapon do you wish to use?\n";
-              int weaponChoice;
-              cin >> weaponChoice;
-             while (weaponChoice > weapon.getQuantity() || weaponChoice <= 0)
-                                                                                                                                                                                    {
+           cout << "Which weapon do you wish to use?\n";
+           int weaponChoice;
+           cin >> weaponChoice;
+           while (weaponChoice > weapon.getQuantity() || weaponChoice <= 0) {
                 cout << "Invalid choice, please enter again.............";
                 cin >> weaponChoice;
-               
-                                                                                                                                                                                    }
-                                                                                                                                                                           cout << "You chose weapon " << weaponChoice << "!\n";
+           }
+       cout << "You chose weapon " << weaponChoice << "!\n";
              
-            
-     cout << "You made: " << player.getDamage() << " damage to the mob!\n";
-                                                                                                                                                                                mob.takeDamage(player.getDamage());
-    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+       cout << "You made: " << player.getDamage() << " damage to the mob!\n";
+       mob.takeDamage(player.getDamage());
+       cout << "The mob's health:  " << mob.getHealth() << endl << endl;
                
-   cout << "The mob fought back!!!\n";
-  cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());
-                                                                                                                                                                                                                                                                                                                                                            cout << "Your health:  " << player.getHealth() << endl;
-    cout << "Your mana:  " << player.getMana() << endl;
+       cout << "The mob fought back!!!\n";
+       cout << "The mob made: " << mob.getDamage() << " damage to you!\n";
+       player.takeDamage(mob.getDamage());
+    
+       cout << "Your health:  " << getHealth() << endl;
+       cout << "Your mana:  " << getMana() << endl;*/
     }
  
     virtual void defend() {
@@ -99,10 +100,10 @@ public:
         cout << getRole() << " defended itself for " << d << " defense.\n";
     }
  
-    void pickItem(const Item& item) { 
-	cout << "You picked up " << item.getItemName() << endl; 
-        bag->add(item);
-    } 
+    //void pickItem(const Item& item) { 
+//	cout << "You picked up " << item.getItemName() << endl; 
+//        bag->add(item);
+//    } 
 
     virtual void castSpell() { 
 	int magic = rand() % damage; 
@@ -110,39 +111,51 @@ public:
     } 
     
     void accessShop(){
-<<<<<<< HEAD
-	
-    }
-=======
 	int ans;
 	cout << "Welcome to the Potion shop!" << endl;
 	cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
 	cout << "How many potions would you like to buy?" << endl;
 	cin >> ans;
 	if(ans * 10 > getPoints()){
-	cout << "Sorry, you do not have enough points." << endl;
+	    cout << "Sorry, you do not have enough points." << endl;
         } else {
-	if(ans == 0){
-	break;
+	    if(ans == 0){
+	    	cout << "must input a quantity > than 0. " << endl; 
+	    }
+	    cout << "Excellent choice!" << endl;
+	    setPoints(getPoints() - (ans * 10));
+	    cout << "Your current points is now " << getPoints() << endl;
+
+	    for(unsigned int i = 0; i < ans; i++){
+		Item* potion = new Potion();
+	    	//bag[i]->add(potion);	
+	    }
 	}
-	cout << "Excellent choice!" << endl;
-	setPoints(getPoints() - (ans * 10));
-	cout << "Your current points is now " << getPoints() << endl;
+    }
 
-	for(unsigned int i = 0; i < ans; i++){
-	bag->add("Potion");	
-	}
-	}
-}
-		
-	
+    void usePotion(Potion p) {
+        //Player* temp = new Player(player->getName(), player->getRole());
+        if(p.getQuantity() > 0) {
+            cout << " used potion. " << p.getDescription() << endl;
+            setHealth(getHealth() + 20);
+
+            if(getHealth() > 100) {
+                setHealth(100);
+            }
+
+            p.setQuantity(p.getQuantity()-1);
+            cout << "Your total health is " << getHealth() << "." << endl;
+            cout << "You have " << p.getQuantity() << " potions left." << endl;
+        } else {
+            cout << "You have no remaining potions left!" << endl;
+        }
+       
+    }
 
 
-
->>>>>>> 95f72c26aa6ff462dc164930fc3fb0f64d22c0c5
 };
 
 
 
-#endif //__PLAYER_HPP__
+#endif
 
