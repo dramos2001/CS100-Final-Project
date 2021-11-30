@@ -113,7 +113,8 @@ public:
 	cout << "Your current points is now " << getPoints() << endl;
 
 	for(unsigned int i = 0; i < ans; i++){
-	bag->add("Potion");	
+	Potion* temp = new Potion();	
+	bag->add(temp);	
 	}
 	}
 }
