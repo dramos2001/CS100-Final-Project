@@ -22,9 +22,8 @@ int main() {
 
     Game game;
     Player player;
-    player.accessShop(); 
-    return 0; 
-/*
+    //player.accessShop();  
+
     int choice = 0;
 
     choice = game.start();
@@ -134,7 +133,6 @@ int main() {
             cout << "Invalid input, please try again.\n";
             cin >> attOrBag;
 
-
         }   
     }
     
@@ -143,6 +141,6 @@ int main() {
 	      game.death(); 
     }
   
-    return 0; */
+    return 0;
 }
 
