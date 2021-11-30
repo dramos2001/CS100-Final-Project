@@ -2,7 +2,7 @@
 #define __SPELL_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "items/spell.hpp"
+#include "../items/spell.hpp"
 
 TEST(SpellTests, ConstructorTest) {
     Spell spell;
@@ -20,8 +20,9 @@ TEST(SpellTests, GetDescriptionTest) {
     EXPECT_EQ(spell.getDescription(), "");
 }
 
-TEST(SpellTests, CastSpellTest) {
-    Spell spell;
-}
+
+//TEST(SpellTests, CastSpellTest) {
+//    Spell spell;
+//}
 
 #endif
