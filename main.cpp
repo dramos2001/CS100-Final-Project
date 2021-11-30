@@ -52,7 +52,7 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
             else
             {
@@ -86,7 +86,7 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
             else
             {
@@ -120,7 +120,7 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
             else
             {
