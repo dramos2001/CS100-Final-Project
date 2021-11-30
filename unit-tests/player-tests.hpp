@@ -5,8 +5,8 @@
 #define __PLAYER_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "Player.hpp"
-#include "Item.hpp"
+#include "../Player.hpp"
+#include "../Item.hpp"
 #include <string>
 
 // CONSTRUCTOR TEST 1
