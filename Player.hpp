@@ -65,34 +65,17 @@ public:
     cout << "Your mana:  " << player.getMana() << endl;
     cout << "-------------------------------------------\n";
     cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-    cout << "You chose to attack!!!\n";
-    // player choose weapon
-    cout << "You have " << weapon.getQuantity() << " weapons.\n";
-          for (int i = 0; i < weapon.getQuantity(); i++)
-           {
-   	      cout << "Weapon " << i + 1 << ": " << weapon.getDescription() << endl;
-           }
-              cout << "Which weapon do you wish to use?\n";
-              int weaponChoice;
-              cin >> weaponChoice;
-             while (weaponChoice > weapon.getQuantity() || weaponChoice <= 0)
-                                                                                                                                                                                    {
-                cout << "Invalid choice, please enter again.............";
-                cin >> weaponChoice;
-               
-                                                                                                                                                                                    }
-                                                                                                                                                                           cout << "You chose weapon " << weaponChoice << "!\n";
-             
-            
-     cout << "You made: " << player.getDamage() << " damage to the mob!\n";
-                                                                                                                                                                                mob.takeDamage(player.getDamage());
+    cout << "You chose to attack!!!\n";       
+    while(player.getHealth() > 0 && mob.getHealth() > 0){         
+    cout << "You made: " << player.getDamage() << " damage to the mob!\n";
+                                                                                                                                                                            mob.takeDamage(player.getDamage());
     cout << "The mob's health:  " << mob.getHealth() << endl << endl;
                
    cout << "The mob fought back!!!\n";
-  cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());
-                                                                                                                                                                                                                                                                                                                                                            cout << "Your health:  " << player.getHealth() << endl;
-    cout << "Your mana:  " << player.getMana() << endl;
-    }
+   cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());                                                                                                                                                                                                                                                                                                   cout << "Your health:  " << player.getHealth() << endl;  
+   cout << "Your mana:  " << player.getMana() << endl;
+   }
+}
  
     virtual void defend() {
 	int d = rand() % defense; 
