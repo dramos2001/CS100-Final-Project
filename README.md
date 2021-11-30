@@ -14,20 +14,26 @@
    * Player types have specific attributes and moves they can do
  * Bag class acts as a container class to store the items the player has such as weapons
    * This class has a composition relationship with Player class
-   * Bag contains data of type Item class; composition relationship between Bag and Item
+   * Bag contains data of type Item class; composition relationship between Bag and Item (
    * 3 item types that inherit from Item: Spell, Potion, and Weapon, each with their own attributes
  * Mob class contains attributes, actions, etc. of mobs in the game
-   * Main mob type will be dragon
- * Shop class contains items to buy
- * Quest class has different levels that player (start from level 1 and once completes a level, gets points and can exchange to buy items at Shop
+   * Main mob type will be dragon (there are other mobs like witch) 
+ * accessShop method in Player class contains potions to buy, with points earned. 
+ * Game class starts the program, creates a Player/role, and has an end method (if player has won/lost). 
 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
  > * You should also update this README file by adding the following:
- >   * What design patterns did you use? For each design pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
+ >   * What design patterns did you use? For each design pattern you must explain in 4-5 sentences: 
+ >   The design patterns we chose were strategy and composite. 
+ >     * Why did you pick this pattern? And what feature did you implement with it? 
+ >     For Strategy, we decided to use it to create the different items as (concrete strategies) and then have a Bag class that configures a concrete strategy object and defines an interface to access its data. So for item class we inherit getItemName and getDescription, and then for (Spell, Weapon, Potion) class, it inherits a method designed for its own usage like Spell has castSpell(), Weapon has useWeapon(). 
+ >     For Composite, we chose this since it made user interaction easier and it made it easy to define behavior of children classes (Wizard, Warrior, Paladin). Doing the strategy was a bit difficult when making a strategy object in the code, but for composite it was easier with adding any additional components. 
  >     * How did the design pattern help you write better code?
+ >     For Strategy, we had strategy methods with Item (mainly Potion). Our classes all flow with each other as it was a family of algorithms. 
+ >     For Composite, we made use of inheritance and use of recursively run a behavior over all components of an object. We also made an interface that allowed us to createPlayer and start and end the program using Player as an object. 
+ >     
  >   * An updated class diagram that reflects the design patterns you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
  >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
 > 
@@ -47,8 +53,11 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > 
  ## Installation/Usage
  > Instructions on installing and running your application
+ > 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > 
  
