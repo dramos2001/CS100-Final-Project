@@ -31,12 +31,12 @@ public:
         this->role = role; 
         level = 1; 
         exp = 0;
-        points = 0;
-        health = 50; 
-        damage = 0; 
-        armor = 0; 
-        defense = 0; 
-        mana = 0; 
+        points = 20;
+        health = 100; 
+        damage = 10; 
+        armor = 10; 
+        defense = 10; 
+        mana = 10; 
     }
 
     virtual string getRole() const {return this->role; }
@@ -46,6 +46,7 @@ public:
     int getHealth() const {return this->health;}
     int getMana() const {return this->mana; } 
     int getPoints() const {return this->points; }
+//need getDamage() 
 
     void setRole(string newRole) {this->role = newRole; }
     void setName(string name) {this->name = name;}
@@ -60,42 +61,44 @@ public:
     void setArmor(int armor) {this->armor = armor; }
 
 
-    virtual void attack(Mob mob) {
+    void attack(Mob mob) {
        // int a = rand() % damage;  
        //cout << getRole() << " attacked for " << a << " damage.\n";
-       cout << "Your health:  " << getHealth() << endl;
-       cout << "Your mana:  " << getMana() << endl;
-       cout << "-------------------------------------------\n";
-       /*cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-       cout << "You chose to attack!!!\n";
+       	cout << "Your health:  " << getHealth() << endl;
+       	cout << "Your mana:  " << getMana() << endl;
+       	cout << "-------------------------------------------\n";
+       	cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+       	cout << "You chose to attack!!!\n";
        // player choose weapon
-       cout << "You have " << weapon.getQuantity() << " weapons.\n";
-          for (int i = 0; i < weapon.getQuantity(); i++)
-           {
-   	      cout << "Weapon " << i + 1 << ": " << weapon.getDescription() << endl;
-           }
-           cout << "Which weapon do you wish to use?\n";
-           int weaponChoice;
-           cin >> weaponChoice;
-           while (weaponChoice > weapon.getQuantity() || weaponChoice <= 0) {
-                cout << "Invalid choice, please enter again.............";
-                cin >> weaponChoice;
-           }
-       cout << "You chose weapon " << weaponChoice << "!\n";
+       //cout << "You have " << weapon.getQuantity() << " weapons.\n";
+       //   for (int i = 0; i < weapon.getQuantity(); i++)
+       //    {
+       //  cout << "Weapon " << i + 1 << ": " << weapon.getDescription() << endl;
+       //    }
+       //    cout << "Which weapon do you wish to use?\n";
+       //    int weaponChoice;
+       //    cin >> weaponChoice;
+       //    while (weaponChoice > weapon.getQuantity() || weaponChoice <= 0) {
+       //        cout << "Invalid choice, please enter again.............";
+       //         cin >> weaponChoice;
+       //    }
+       //cout << "You chose weapon " << weaponChoice << "!\n";
              
-       cout << "You made: " << player.getDamage() << " damage to the mob!\n";
-       mob.takeDamage(player.getDamage());
-       cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-               
+       	cout << "You made: " << getDamage() << " damage to the mob!\n";
+       //mob.takeDamage(getDamage());
+       	int d = mob.takeDamage(getDamage()); 
+       	mob.setDamage(d);
+       	cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+        
        cout << "The mob fought back!!!\n";
        cout << "The mob made: " << mob.getDamage() << " damage to you!\n";
-       player.takeDamage(mob.getDamage());
+       takeDamage(mob.getDamage());
     
        cout << "Your health:  " << getHealth() << endl;
-       cout << "Your mana:  " << getMana() << endl;*/
+       cout << "Your mana:  " << getMana() << endl;
     }
  
-    virtual void defend() {
+    void defend() {
 	int d = rand() % defense; 
         cout << getRole() << " defended itself for " << d << " defense.\n";
     }
@@ -105,11 +108,12 @@ public:
 //        bag->add(item);
 //    } 
 
-    virtual void castSpell() { 
+    void castSpell() { 
 	int magic = rand() % damage; 
         cout << getRole() << " casts a spell for " << magic << " damage.\n";
     } 
     
+
     void accessShop(){
 	int ans;
 	cout << "Welcome to the Potion shop!" << endl;

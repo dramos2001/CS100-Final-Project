@@ -4,6 +4,8 @@
 #include <random>
 #include <iostream>
 using namespace std;
+#include "Player.hpp"
+
 class Mob {
 private:
     int health;
@@ -81,20 +83,21 @@ public:
     }
 
     int getDamage(){
-        return this->damage; //returns the damage
+        //return this->damage; //returns the damage
     }
 
-    void takeDamage(int damage) { health -= damage; if (health<0) health=0; }
-
-    virtual void attack(){
-	int a = rand() % damage;
-	cout << getMobType() << " attack for " << a << " damage.\n"; 
+    int takeDamage(int damage) { 
+	health -= damage; 
+	if (health<0) health=0; 
+	return health; 
     }
 
-    virtual void defend() {
-	int d = rand() % defense;
-        cout << getMobType() << " defended itself for " << d << ".\n";
-    }
+    //void attack(Player p){
+	//int a = rand() % damage;
+	//cout << getMobType() << " attack for " << a << " damage.\n"; 
+    //	cout << "Mob health: " << getHealth() << endl; 
+    //	cout << 
+    //}
 
 };
 
