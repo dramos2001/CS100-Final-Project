@@ -57,7 +57,8 @@ int main() {
 	}
 
 	if(ans == 'Y'){
-	player.accessShop();
+	    player.accessShop();
+	    
 	}
 			
 
@@ -163,7 +164,7 @@ int main() {
                 player.attack(mob); //player attacks
             }
             else
-            {
+	    {
                 Bag bag;
                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag

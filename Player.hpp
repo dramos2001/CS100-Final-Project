@@ -123,6 +123,7 @@ public:
     
     void accessShop(){
 	    int ans;
+	    int amt = 0; 
 	    cout << "Welcome to the Potion shop!" << endl;
 	    cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
 	    cout << "How many potions would you like to buy?" << endl;
@@ -138,7 +139,10 @@ public:
 	        cout << "Your current points is now " << getPoints() << endl;
 
 	        for(unsigned int i = 0; i < ans; i++){
-		    Item* potion = new Potion();
+		    amt++; 
+		    cout << "Potion: " << amt << endl; 
+		    //bag[i]->add("Potion");
+		    //Item* potion = new Potion();
 	    	    //bag[i]->add(potion);	
 	        }
 	    }
