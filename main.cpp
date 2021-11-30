@@ -22,11 +22,11 @@ int main() {
 
     Game game;
     Player player;
-
+    Bag bag;
     //player.accessShop();  
 
     int choice = 0;
-
+    
     choice = game.start();
     if (choice == 2) {
         cout << "Thanks for playing, until next time...\n";
@@ -42,7 +42,25 @@ int main() {
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-       
+	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+	char ans;
+	cin >> ans;
+	bool flag = true;
+	while(flag){
+	if(ans == 'Y' || ans == 'N'){
+	flag = false;
+	} else {
+	cout << "input the correct character!" << endl;
+	cin >> ans;
+	}
+
+	}
+
+	if(ans == 'Y'){
+	player.accessShop();
+	}
+			
+
 	cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
@@ -58,7 +76,6 @@ int main() {
 	   
             else
             {
-                Bag bag;
                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag
                 //cout << "Which item do you wish to use?\n";
