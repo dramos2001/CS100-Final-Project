@@ -4,7 +4,6 @@
 #include <string>
 #include <random>
 #include "bag.h"
-#include "Player.hpp"
 #include "mob.h"
 #include "items/potion.hpp"
 using namespace std;
@@ -61,6 +60,21 @@ public:
 
     void takeDamage(int damage) { health -= damage; if (health < 0) health = 0; }
 
+    void printStats() {
+        // prints player stats to user for easy readability
+        cout << "\n\nHere are your stats:\n\n";
+        cout << "Name: " << name << "\n";
+        cout << "Role: " << role << "\n";
+        cout << "Level: " << level << "\n";
+        cout << "EXP: " << exp << "\n";
+        cout << "Points: " << points << "\n";
+        cout << "Health: " << health << "\n";
+        cout << "Damage: " << damage << "\n";
+        cout << "Armor: " << armor << "\n";
+        cout << "Defense: " << defense << "\n";
+        cout << "Mana: " << mana << "\n";
+
+    }
     virtual void attack(Mob& mob) 
     {
         while (this->getHealth() > 0 && mob.getHealth() > 0)
@@ -72,24 +86,24 @@ public:
             cout << "The mob has points:  " << mob.getPoints() << endl << endl;//added display mob points
 
             cout << "You chose to attack!!!\n";
-	    int d = rand() % damage + 10; 
-	    this->setDamage(d);
+	          int d = rand() % damage + 10; 
+	          this->setDamage(d);
             
-                cout << "You made: " << this->getDamage() << " damage to the mob!\n";
-                mob.takeDamage(this->getDamage());
-                cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-                if (mob.getHealth() <= 0) {
-                    cout << "The mob has been defeated!" << endl;
-		    this->setPoints(mob.getPoints() + this->getPoints());
+            cout << "You made: " << this->getDamage() << " damage to the mob!\n";
+            mob.takeDamage(this->getDamage());
+            cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+            if (mob.getHealth() <= 0) {
+                cout << "The mob has been defeated!" << endl;
+		            this->setPoints(mob.getPoints() + this->getPoints());
 		   // break;
-                }
-                else {
-                    this->defend(mob);
-                }
+            }
+            else {
+                this->defend(mob);
+            }
              
             
         }
-	cout << "Total points rewarded: " << this->getPoints() << endl; 
+	      cout << "Total points rewarded: " << this->getPoints() << endl; 
 
     }
   
@@ -115,7 +129,6 @@ public:
   
     virtual void castSpell() { }
 
-    
     void accessShop(Bag& bag){
 	    int ans;
 	    int amt = 0; 
@@ -127,28 +140,24 @@ public:
 	      cout << "Sorry, you do not have enough points." << endl;
       } else {
 	        if(ans == 0){
-		    cout << "must input a quantity > than 0. " << endl;
+		          cout << "must input a quantity > than 0. " << endl;
 	        }
 	        cout << "Excellent choice!" << endl;
 	        setPoints(getPoints() - (ans * 10));
 	        cout << "Your current points is now " << getPoints() << endl;
-<<<<<<< HEAD
 
 	        for(unsigned int i = 0; i < ans; i++){
-		    amt++; 
-		    cout << "Potion: " << amt << endl; 
-		    //bag[i]->add("Potion");
-		    //Item* potion = new Potion();
-	    	    //bag[i]->add(potion);	
+		          amt++; 
+		          cout << "Potion: " << amt << endl; 
+              //bag[i]->add("Potion");
+              //Item* potion = new Potion();
+              //bag[i]->add(potion);	
 	        }
-=======
-		
-		    Item potion;
-	    	    bag.add(potion);	
-	        
->>>>>>> 502b01c0c17edfa5e40f20354948a933a684b74b
+        
+		      Item potion;
+          bag.add(potion);	
 	    }
-    }
+   }
 
     void usePotion(Bag& bag) {
         if(bag.Size() > 0) {

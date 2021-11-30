@@ -42,9 +42,7 @@
  > Screenshots of the input/output after running your application
  > 
  ## Installation/Usage
- > Instructions on installing and running your application
- > 
+  Usage of our project is simple and straightforward. Clone the repository onto your machine, making sure to do so recursively since it contains the googletest submodule. Then     you just need to run the main executable file and you are right into the game. If you want to run the unit tests of our project, you can run the test executable.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- > 
+  Testing of our project was done using googletest and creating unit tests for each class. Our tests would test each classes' member functions for different test cases/scenarios   that may occur during execution of the program. 
  
