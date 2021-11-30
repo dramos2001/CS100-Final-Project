@@ -72,15 +72,13 @@ public:
 
         bool flag = true;
         while(flag) {
-            if (ans != 'Y' || ans != 'N' || ans != 'y' || ans != 'n') {
-                cout << "input the correct character!" << endl;
-                cin >> ans;
-		flag = false; 
-            }
-            else {
-                flag = false;
-            }
-        }
+	   if(ans == 'Y' || ans == 'N'){
+	    flag = false;     
+	} else {
+	    std::cout << "input the correct character!" << std::endl;
+	    std::cin >> ans;
+	}
+	}
 
         if(ans == 'Y') {
             player.accessShop(bag);
@@ -104,14 +102,15 @@ public:
                 bag.displayBag(std::cout);  //show bag
                 std::cout << "Would you like to use a potion? Y/N" << std::endl;
                 std::cin >> answer;
-
-                if(answer == 'Y' || answer == 'N' || answer == 'y' || answer == 'n') { 
-                    temp = false;
-                } else {
-                    cout << "input the correct character!" << endl;
-                    cin >> answer;
-                }
-                if(ans == 'Y') {
+		while(temp){
+                if(answer == 'Y' || answer == 'N'){
+		   temp = false;
+		} else {
+		   std::cout << "input the correct character!" << std::endl;
+		   cin >> answer;
+		}
+		}
+                if(answer == 'Y') {
                     player.usePotion(bag);
                 }
 
