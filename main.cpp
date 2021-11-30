@@ -48,7 +48,7 @@ int main() {
         char attOrBag;
         cin >> attOrBag;
 
-        while (attOrBag != 'a' || attOrBag != 'A' || attOrBag == 'b' || attOrBag == 'B')
+       /* while (attOrBag != 'a' || attOrBag != 'A' || attOrBag == 'b' || attOrBag == 'B')
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
@@ -65,6 +65,30 @@ int main() {
             cout << "Invalid input, please try again.\n";
             cin >> attOrBag;
 
+
+        }*/
+	    
+	    if (attOrBag == 'b' || attOrBag == 'B')
+        {
+            cout << "You chose to use bag.\n";
+            bag.displayBag(cout);  
+        }
+
+
+        while (attOrBag != 'a' || attOrBag != 'A')
+        {
+
+            player.attack(mob); 
+
+
+            if (player.getHealth() <= 0 && mob.getHealth() > 0) {
+                game.death();
+                break;
+            }
+            if (player.getHealth() > 0 && mob.getHealth() <= 0) {
+                game.victory();
+                break;
+            }
 
         }
  
