@@ -22,6 +22,7 @@ int main() {
 
     Game game;
     Player player;
+
     //player.accessShop();  
 
     int choice = 0;

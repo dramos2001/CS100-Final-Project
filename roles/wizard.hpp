@@ -14,17 +14,17 @@ public:
     string getRole() const {return _role; }
 
     void attack() { 
-	int a = (rand() % _mana); 
+	    int a = (rand() % _mana); 
         cout << getRole() << " attacked for " << a << " damage. \n";
     } 
 
     void defend() { 
-	int d = (rand() % _armor);
+	    int d = (rand() % _armor);
         cout << getRole() << " defended for " << d << endl; 
     } 
 
     void castSpell() { 
-	int m = (rand() % _magic); 
+	    int m = (rand() % _magic); 
         Item spell = new Spell();
         int a = spell.castSpell();
         m += a; 
