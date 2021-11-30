@@ -16,11 +16,11 @@ public:
     void displayBag(){
         std::cout << "Your bag contains: " << std::endl; 
         for(unsigned int i = 0; i < item.size(); i++){
-            std::cout << item.at(i).getItemName() << " " << item.at(i).getQuantity() << std::endl;
+            std::cout << item.at(i)->getItemName() << " " << item.at(i)->getQuantity() << std::endl;
         }
     }
 
-    void add(const Item& it) {
+    void add(Item* it) {
         item.push_back(it);
     } 
 
@@ -32,12 +32,8 @@ public:
         return (item.size() == 0);
     }
 
-    Item* useItem();
-
-    Item* showItem();
-
 private:
-    vector<Item> item;  
+    vector<Item*> item;  
 };
 
 #endif
