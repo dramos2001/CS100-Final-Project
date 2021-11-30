@@ -60,45 +60,50 @@ public:
     virtual void attack() 
     {
 	    
-       cout << "Your health:  " << player.getHealth() << endl;
-    cout << "Your mana:  " << player.getMana() << endl;
-    cout << "-------------------------------------------\n";
-    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-    cout << "You chose to attack!!!\n";       
-    while(player.getHealth() > 0 && mob.getHealth() > 0){         
-    cout << "You made: " << player.getDamage() << " damage to the mob!\n";
-                                                                                                                                                                            mob.takeDamage(player.getDamage());
-    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-    if(mob.getHealth() < 0) 
-    {
-	cout << "The mob has been defeated! << endl;
-	} 
-	    else 
-	    {
-   cout << "The mob fought back!!!\n";
-   cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());                                                                                                                                                                                                                                                                                                   cout << "Your health:  " << player.getHealth() << endl;  
-   cout << "Your mana:  " << player.getMana() << endl;
-   		}
-	    
-	}
-	player.setPoints(mob.getPoints() + player.getPoints());
+        Mob mob;
+        while (this->getHealth() > 0 && mob.getHealth() > 0)
+        {
+            cout << "Your health:  " << this->getHealth() << endl;
+            cout << "Your mana:  " << this->getMana() << endl;
+            cout << "-------------------------------------------\n";
+            cout << "The mob's health:  " << mob.getHealth() << endl;
+            cout << "The mob has points:  " << mob.getPoints() << endl << endl;//added display mob points
+
+            cout << "You chose to attack!!!\n";
+
+            while (player.getHealth() > 0 && mob.getHealth() > 0) {
+                cout << "You made: " << player.getDamage() << " damage to the mob!\n";
+                mob.takeDamage(player.getDamage());
+                cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+                if (mob.getHealth() < 0) {
+                    cout << "The mob has been defeated! << endl;
+                }
+                else {
+                    this->defend();
+            }
+            player.setPoints(mob.getPoints() + player.getPoints());
+
+        }
+
     }
  
     virtual void defend() {
-	//int d = rand() % defense; 
-        //cout << getRole() << " defended itself for " << d << " defense.\n";
-        cout << "You chose to defend!\n";
+	    
+	   cout << "The mob attacks you!\n";//player defend
         
             if (this->getArmor() < 50)
             {
                 cout << "The mob made " << mob.getDamage()/2 << " damage to you.\n";
                 player.takeDamage(mob.getDamage()/2);
+                cout << "Your current health: " << this->getHealth() << endl;
             }
             else
             {
                 cout << "The mob made " << mob.getDamage() / 4 << " damage to you.\n";
                 player.takeDamage(mob.getDamage()/4);
+                cout << "Your current health: " << this->getHealth() << endl;
             }
+        
         
     }
  
