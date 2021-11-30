@@ -153,9 +153,10 @@ public:
               //Item* potion = new Potion();
               //bag[i]->add(potion);	
 	        //}
-        
+        	for(unsigned int i = 0; i < ans; i++){
 	  	Item potion;
           	bag.add(potion);	
+		}
 	    }
    }
 

@@ -103,20 +103,18 @@ public:
                 std::cout << "Would you like to use a potion? Y/N" << std::endl;
                 std::cin >> answer;
 		while(temp){
-                if(answer == 'Y' || answer == 'N'){
+      
+    if(answer == 'Y' || answer == 'N'){
 		   temp = false;
 		} else {
 		   std::cout << "input the correct character!" << std::endl;
 		   cin >> answer;
 		}
 		}
-                if(answer == 'Y') {
-                    player.usePotion(bag);
-                }
-
-                
-            }
-
+    if(answer == 'Y') {
+    player.usePotion(bag);
+    }
+}
 	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
                 cin >> attOrBag;
