@@ -76,7 +76,7 @@ public:
                 mob->takeDamage(player.getDamage());
                 cout << "The mob's health:  " << mob->getHealth() << endl << endl;
                 if (mob->getHealth() < 0) {
-                    cout << "The mob has been defeated! << endl;
+                    cout << "The mob has been defeated!" << endl;
                 }
                 else {
                     this->defend();
