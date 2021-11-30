@@ -78,7 +78,6 @@ public:
             //{
                 cout << "You made: " << this->getDamage() << " damage to the mob!\n";
                 mob.takeDamage(this->getDamage());
-		mob.setHealth(this->getHealth() - this->getDamage());
                 cout << "The mob's health:  " << mob.getHealth() << endl << endl;
                 if (mob.getHealth() <= 0) {
                     cout << "The mob has been defeated!" << endl;
