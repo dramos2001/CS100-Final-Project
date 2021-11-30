@@ -30,13 +30,6 @@
  * How did the design pattern help you write better code?
     For Strategy, we had strategy methods with Item (mainly Potion). Our classes all flow with each other as it was a family of algorithms. 
     For Composite, we made use of inheritance and use of recursively run a behavior over all components of an object. We also made an interface that allowed us to createPlayer and start and end the program using Player as an object. 
-  
-> During the meeting with your TA you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
  
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
