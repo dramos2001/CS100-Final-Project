@@ -2,6 +2,7 @@
 #define __PLAYER_HPP__
 
 #include <string>
+#include <random>
 #include "bag.h"
 #include "Player.hpp"
 #include "mob.h"
@@ -30,12 +31,12 @@ public:
         this->role = role;
         level = 1;
         exp = 0;
-        points = 0;
-        health = 50;
-        damage = 0;
-        armor = 0;
-        defense = 0;
-        mana = 0;
+        points = 20;
+        health = 100;
+        damage = 20;
+        armor = 20;
+        defense = 20;
+        mana = 20;
     }
 
     virtual string getRole() const { return this->role; }
@@ -60,36 +61,38 @@ public:
 
     void takeDamage(int damage) { health -= damage; if (health < 0) health = 0; }
 
-    virtual void attack() 
+    virtual void attack(Mob mob) 
     {
-        while (this->getHealth() > 0 && mob->getHealth() > 0)
-        {
+        //while (this->getHealth() > 0 && mob.getHealth() > 0)
+        //{
             cout << "Your health:  " << this->getHealth() << endl;
             cout << "Your mana:  " << this->getMana() << endl;
             cout << "-------------------------------------------\n";
-            cout << "The mob's health:  " << mob->getHealth() << endl;
-            cout << "The mob has points:  " << mob->getPoints() << endl << endl;//added display mob points
+            cout << "The mob's health:  " << mob.getHealth() << endl;
+            cout << "The mob has points:  " << mob.getPoints() << endl << endl;//added display mob points
 
             cout << "You chose to attack!!!\n";
-
-            while (this->getHealth() > 0 && mob->getHealth() > 0)
-            {
+	    int d = rand() % damage + 10; 
+	    this->setDamage(d);
+            //while (this->getHealth() > 0 && mob.getHealth() > 0)
+            //{
                 cout << "You made: " << this->getDamage() << " damage to the mob!\n";
-                mob->takeDamage(this->getDamage());
-                cout << "The mob's health:  " << mob->getHealth() << endl << endl;
-                if (mob->getHealth() < 0) {
+                mob.takeDamage(this->getDamage());
+		mob.setHealth(this->getHealth() - this->getDamage());
+                cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+                if (mob.getHealth() <= 0) {
                     cout << "The mob has been defeated!" << endl;
                 }
                 else {
-                    this->defend();
+                    this->defend(mob);
                 }
                 this->setPoints(mob.getPoints() + this->getPoints());
-            }
-        }
+            //}
+        //}
 
     }
   
-    virtual void defend() {
+    virtual void defend(Mob mob) {
     
        cout << "The mob attacks you!\n";//player defend
         
@@ -101,7 +104,7 @@ public:
             }
             else
             {
-                cout << "The mob made " << mob->getDamage() / 4 << " damage to you.\n";
+                cout << "The mob made " << mob.getDamage() / 4 << " damage to you.\n";
                 this->takeDamage(mob.getDamage()/4);
                 cout << "Your current health: " << this->getHealth() << endl;
             }
@@ -134,7 +137,7 @@ public:
 	        cout << "Your current points is now " << getPoints() << endl;
 
 	        for(unsigned int i = 0; i < ans; i++){
-		        Item* potion = new Potion();
+		    Item* potion = new Potion();
 	    	    //bag[i]->add(potion);	
 	        }
 	    }
