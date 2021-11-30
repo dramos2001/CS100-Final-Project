@@ -8,8 +8,8 @@
 TEST(PaladinTest, ConstructorTest) {
     Paladin paladin;
     EXPECT_EQ(paladin.getRole(), "Paladin");
-    EXPECT_EQ(paladin.getHealth(), 120);
-    EXPECT_EQ(paladin.getMana(), 100);
+    EXPECT_EQ(paladin.getHealth(), 100);
+    EXPECT_EQ(paladin.getMana(), 20);
     // EXPECT_EQ(paladin.getArmor(), 120);
 }
 

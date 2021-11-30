@@ -8,7 +8,7 @@ TEST(WizardTests, ConstructorTest) {
     Wizard wizard;
     EXPECT_EQ(wizard.getRole(), "Wizard");
     EXPECT_EQ(wizard.getHealth(), 100);
-    EXPECT_EQ(wizard.getMana(), 130);
+    EXPECT_EQ(wizard.getMana(), 20);
     //EXPECT_EQ(wizard.getArmor(), 20);
     //EXPECT_EQ(wizard.getMagic(), 50);
 }
