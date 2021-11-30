@@ -21,7 +21,7 @@ public:
         mob_type = type;
         level = 1;
         exp = 0;
-        points = 0;
+        points = rand() % 10;
         health = 50;
         damage = 20;
         defense = 10;

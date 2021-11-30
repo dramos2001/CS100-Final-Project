@@ -70,11 +70,15 @@ public:
     cout << "You made: " << player.getDamage() << " damage to the mob!\n";
                                                                                                                                                                             mob.takeDamage(player.getDamage());
     cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-               
+    if(mob.getHealth() < 0) {
+	cout << "The mob has been defeated! << endl;
+} else {
    cout << "The mob fought back!!!\n";
    cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());                                                                                                                                                                                                                                                                                                   cout << "Your health:  " << player.getHealth() << endl;  
    cout << "Your mana:  " << player.getMana() << endl;
    }
+}
+	player.setPoints(mob.getPoints() + player.getPoints());
 }
  
     virtual void defend() {
