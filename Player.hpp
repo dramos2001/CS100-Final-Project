@@ -77,8 +77,8 @@ public:
     }
     virtual void attack(Mob& mob) 
     {
-        while (this->getHealth() > 0 && mob.getHealth() > 0)
-        {
+     //   while (this->getHealth() > 0 && mob.getHealth() > 0)
+     //   {
             cout << "Your health:  " << this->getHealth() << endl;
             cout << "Your mana:  " << this->getMana() << endl;
             cout << "-------------------------------------------\n";
@@ -102,8 +102,8 @@ public:
             }
              
             
-        }
-	      cout << "Total points rewarded: " << this->getPoints() << endl; 
+        //}
+	     // cout << "Total points rewarded: " << this->getPoints() << endl; 
 
     }
   
@@ -146,16 +146,16 @@ public:
 	        setPoints(getPoints() - (ans * 10));
 	        cout << "Your current points is now " << getPoints() << endl;
 
-	        for(unsigned int i = 0; i < ans; i++){
-		          amt++; 
-		          cout << "Potion: " << amt << endl; 
+	        //for(unsigned int i = 0; i < ans; i++){
+		//          amt++; 
+		//          cout << "Potion: " << amt << endl; 
               //bag[i]->add("Potion");
               //Item* potion = new Potion();
               //bag[i]->add(potion);	
-	        }
+	        //}
         
-		      Item potion;
-          bag.add(potion);	
+	  	Item potion;
+          	bag.add(potion);	
 	    }
    }
 
