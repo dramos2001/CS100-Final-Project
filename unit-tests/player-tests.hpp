@@ -6,6 +6,7 @@
 
 #include "gtest/gtest.h"
 #include "Player.hpp"
+#include "Item.hpp"
 #include <string>
 
 // CONSTRUCTOR TEST 1
@@ -261,8 +262,21 @@ TEST(PlayerTest, TakeDamageTest2) {
     EXPECT_EQ(player.getHealth(), 0) // 50 - 60 = -10 so health is set to 0
 }
 
-// Need tests for attack(), defend(), pickItem(), and castSpell()
+// need tests for attack, defend, and cast spell
 
+// // pickItem test 1
+// TEST(PlayerTest, PickItemTest1) {
+//     Player player;
+//     Item item("Potion");
+//     player.pickItem(item);
+// }
+
+// // pickItem test 2
+// TEST(PlayerTest, PickItemTest2) {
+//     Player player;
+//     Item item("Weapon");
+//     player.pickItem(item);
+// }
 
 
 
