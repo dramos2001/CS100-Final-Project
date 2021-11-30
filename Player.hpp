@@ -91,7 +91,7 @@ public:
 	    
 	   cout << "The mob attacks you!\n";//player defend
         
-            if (this->getArmor() < 50)
+            if (this->getArmor() < 20)
             {
                 cout << "The mob made " << mob.getDamage()/2 << " damage to you.\n";
                 player.takeDamage(mob.getDamage()/2);
