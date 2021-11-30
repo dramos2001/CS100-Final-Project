@@ -4,6 +4,8 @@
 #include <string>
 #include <random>
 #include "bag.h"
+#include "items/potion.hpp"
+#include "mob.h"
 using namespace std;
 
 
@@ -58,27 +60,83 @@ public:
     void setArmor(int armor) {this->armor = armor; }
     
     virtual void attack() {
-        int a = rand() % damage; 
-        cout << getRole() << " attacked for " << a << " damage.\n";
-    }
- 
-    virtual void defend() {
-	int d = rand() % defense; 
-        cout << getRole() << " defended itself for " << d << " defense.\n";
-    }
- 
-    void pickItem(const Item& item) { 
-	cout << "You picked up " << item.getItemName() << endl; 
-        bag->add(item);
-    } 
+       // int a = rand() % damage; 
+     
+       //cout << getRole() << " attacked for " << a << " damage.\n";
+    cout << "Your health:  " << player.getHealth() << endl;
+    cout << "Your mana:  " << player.getMana() << endl;
+    cout << "-------------------------------------------\n";
+    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+    cout << "You chose to attack!!!\n";       
+    while(player.getHealth() > 0 && mob.getHealth() > 0){         
+    cout << "You made: " << player.getDamage() << " damage to the mob!\n";
+                                                                                                                                                                            mob.takeDamage(player.getDamage());
+    cout << "The mob's health:  " << mob.getHealth() << endl << endl;
+    if(mob.getHealth() < 0) {
+	cout << "The mob has been defeated! << endl;
+} else {
+   cout << "The mob fought back!!!\n";
+   cout << "The mob made: " << mob.getDamage() << " damage to you!\n";                                                                                                               player.takeDamage(mob.getDamage());                                                                                                                                                                                                                                                                                                   cout << "Your health:  " << player.getHealth() << endl;  
+   cout << "Your mana:  " << player.getMana() << endl;
+   }
+}
+	player.setPoints(mob.getPoints() + player.getPoints());
+}
 
-    virtual void castSpell() { 
-	int magic = rand() % damage; 
-        cout << getRole() << " casts a spell for " << magic << " damage.\n";
-    } 
+    virtual void defend() {
+      	//int d = rand() % defense; 
+        //cout << getRole() << " defended itself for " << d << " defense.\n";
+    }
+
+  virtual void castSpell() { 
+	  //int magic = rand() % damage; 
+    //cout << getRole() << " casts a spell for " << magic << " damage.\n";
+   } 
+    
+  void accessShop(){
+	int ans;
+	cout << "Welcome to the Potion shop!" << endl;
+	cout << "The cost for potions is 10 points; you currently have " << getPoints() << endl;
+	cout << "How many potions would you like to buy?" << endl;
+	cin >> ans;
+	if(ans * 10 > getPoints()){
+	    cout << "Sorry, you do not have enough points." << endl;
+        } else {
+	    if(ans == 0){
+	    	cout << "must input a quantity > than 0. " << endl; 
+	    }
+	    cout << "Excellent choice!" << endl;
+	    setPoints(getPoints() - (ans * 10));
+	    cout << "Your current points is now " << getPoints() << endl;
+
+	    for(unsigned int i = 0; i < ans; i++){
+		    Item* potion = new Potion();
+	    	//bag[i]->add(potion);	
+	    }
+	}
+  }
+
+    void usePotion(Potion p) {
+        if(p.getQuantity() > 0) {
+            cout << " used potion. " << p.getDescription() << endl;
+            setHealth(getHealth() + 20);
+
+            if(getHealth() > 100) {
+                setHealth(100);
+            }
+
+            p.setQuantity(p.getQuantity()-1);
+            cout << "Your total health is " << getHealth() << "." << endl;
+            cout << "You have " << p.getQuantity() << " potions left." << endl;
+        } else {
+            cout << "You have no remaining potions left!" << endl;
+        }
+       
+    }
+
+
 };
 
 
-
-#endif //__PLAYER_HPP__
+#endif
 
