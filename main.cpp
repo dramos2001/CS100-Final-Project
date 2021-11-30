@@ -53,19 +53,30 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
+	   
             else
             {
                 Bag bag;
                 cout << "You chose to use bag.\n";
-                bag.displayBag();  //show bag
-                cout << "Which item do you wish to use?\n";
+                bag.displayBag(cout);  //show bag
+                //cout << "Which item do you wish to use?\n";
             }
-
-            cout << "Invalid input, please try again.\n";
-            cin >> attOrBag;
-
+	   
+	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 		
+            	cout << "you're still alive. continue attacking.\n";
+            	cin >> attOrBag;
+		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
+	    }
+	    if (player.getHealth() <= 0) {
+		game.death(); 
+		break; 
+	    }
+	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
+	    	game.victory();
+	    	break;
+	    }
 
         }
  
@@ -76,7 +87,6 @@ int main() {
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
      
-
 	cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
@@ -87,18 +97,31 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
             else
             {
                 Bag bag;
                 cout << "You chose to use bag.\n";
-                bag.displayBag();  //show bag
-                cout << "Which item do you wish to use?\n";
+                bag.displayBag(cout);  //show bag
+                //cout << "Which item do you wish to use?\n";
             }
 
-            cout << "Invalid input, please try again.\n";
-            cin >> attOrBag;
+	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 
+            	cout << "you're still alive. continue attacking..\n";
+            	cin >> attOrBag;
+		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
+	    }
+	    if (player.getHealth() <= 0 && mob.getHealth() > 0 ) {
+		game.death();
+		break;
+	    }
+	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
+                game.victory();
+                break;
+            }
+            //cout << "Invalid input, please try again.\n";
+            //cin >> attOrBag;
 
 
         }   
@@ -108,9 +131,7 @@ int main() {
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Wizard. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-     
-
-
+    
 	cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
@@ -121,25 +142,40 @@ int main() {
         {
             if (attOrBag == 'a' || attOrBag == 'A')
             {
-                player.attack(); //player attacks
+                player.attack(mob); //player attacks
             }
             else
             {
                 Bag bag;
                 cout << "You chose to use bag.\n";
-                bag.displayBag();  //show bag
-                cout << "Which item do you wish to use?\n";
+                bag.displayBag(cout);  //show bag
+                //cout << "Which item do you wish to use?\n";
             }
 
-            cout << "Invalid input, please try again.\n";
-            cin >> attOrBag;
+	    if (player.getHealth() > 0 && mob.getHealth() > 0) {
+            	cout << "you're still alive. continue attacking.\n";
+            	cin >> attOrBag;
+		if (attOrBag == 'q' || attOrBag == 'Q') {break; }
+	    } 
+	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
+		game.death();
+		break; 
+	    }
+	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
+                game.victory();
+                break;
+            }
+            //cout << "Invalid input, please try again.\n";
+            //cin >> attOrBag;
 
         }   
     }
     
-
+    if (player.getHealth() > 0) {
+	game.victory();
+    }
     if (player.getHealth() <= 0) {
-	      game.death(); 
+          game.death(); 
     }
   
     return 0;
