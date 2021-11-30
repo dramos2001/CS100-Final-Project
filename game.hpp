@@ -117,6 +117,11 @@ public:
                 cout << "Do you want to attack or continue using bag? a/b" << endl;
                 cin >> attOrBag;
             }
+
+	    if (player.getHealth() > 0 && mob.getHealth() > 0 ) {
+		cout << "Do you want to attack or continue using bag? a/b" << endl;
+                cin >> attOrBag;
+	    }
         
             if (player.getHealth() <= 0 && mob.getHealth() > 0) {
                 this->death(); 
@@ -124,6 +129,7 @@ public:
             }
             if (player.getHealth() > 0 && mob.getHealth() <= 0) {
                 this->victory();
+		cout << "Total points rewarded: " << player.getPoints() << endl;
                 break;
             }
 
