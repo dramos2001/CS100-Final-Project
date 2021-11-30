@@ -13,7 +13,7 @@ public:
     int getQuantity() const {return _quantity; }
 
     void useWeapon() { 
-	int d = rand() % damage; 
+	    int d = rand() % damage; 
         damage = d; 
         cout << " damage on opponent is ";
         if (damage < 15) cout << damage << " not very effective. \n";

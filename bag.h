@@ -13,8 +13,8 @@ class Bag
 public:
     Bag() { }
 
-    void displayBag(){
-        std::cout << "Your bag contains: " << std::endl; 
+    void displayBag(std::ostream& os) {  // added ostream for unit testing
+        os << "Your bag contains: " << std::endl; 
         for(unsigned int i = 0; i < item.size(); i++){
             std::cout << item.at(i)->getItemName() << " " << item.at(i)->getQuantity() << std::endl;
         }
@@ -35,8 +35,8 @@ public:
     int Size() {return item.size(); }
 
 private:
-    vector<Item*> item;  
-
+    std::vector<Item> item;
+  
 };
 
 #endif
