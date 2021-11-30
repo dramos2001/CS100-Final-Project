@@ -59,6 +59,11 @@ public:
     	return player;
     }
 
+    void victory() {
+	cout << "You win! Congratulations on beating the quest! \n";
+	return;
+    }
+
     void death() {
         cout << "Sorry you failed your quest. \n";
         return; 
