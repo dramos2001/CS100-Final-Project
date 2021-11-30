@@ -2,7 +2,7 @@
 #define __PALADIN_TESTS_HPP__
 
 #include "gtest/gtest.h"
-#include "paladin.hpp"
+#include "../roles/paladin.hpp"
 
 // constructor test
 TEST(PaladinTest, ConstructorTest) {

@@ -38,10 +38,11 @@ int main() {
     player = game.createPlayer();
 
     if (player.getRole() == "Paladin") {
-	int randomMob = rand() % 4;
-	Mob mob(monsters[randomMob], monsters[randomMob]);
+        int randomMob = rand() % 4;
+        Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
+
 	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
 	char ans;
 	cin >> ans;
@@ -61,8 +62,8 @@ int main() {
 	    
 	}
 			
-
 	cout << "Do you wish to attack or use bag?\n";
+
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
@@ -95,7 +96,7 @@ int main() {
 
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
 		cin >> attOrBag;
-                //cout << "Which item do you wish to use?\n";
+               
             }
 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
@@ -110,12 +111,13 @@ int main() {
         }
  
     }
+  
     else if (player.getRole() == "Warrior"){ 
-	int randomMob = rand() % 4;
-	Mob mob(monsters[randomMob], monsters[randomMob]);
+        int randomMob = rand() % 4;
+        Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-     
+
 	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
 	char ans;
 	cin >> ans;
@@ -135,6 +137,7 @@ int main() {
 	}
 
 	cout << "Do you wish to attack or use bag?\n";
+
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
@@ -148,7 +151,6 @@ int main() {
             }
             else
             {
-                Bag bag;
                 cout << "You chose to use bag.\n";
                 bag.displayBag(cout);  //show bag
 		cout << "Would you like to use a potion? Y/N" << endl;
@@ -167,7 +169,6 @@ int main() {
 
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
 		cin >> attOrBag;
-                //cout << "Which item do you wish to use?\n";
             }
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0 ) {
 		game.death();
@@ -183,13 +184,15 @@ int main() {
 
         }   
     }
+  
     else if (player.getRole() == "Wizard") {
 	int randomMob = rand() % 4;
 	Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Wizard. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
 
-	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+    	cout << "Do want to access shop before your fight? Enter Y/N" << endl;
+
 	char ans;
 	cin >> ans;
 	bool flag = true;
@@ -206,7 +209,7 @@ int main() {
 	if(ans == 'Y'){
 	player.accessShop(bag);
 	}
-    
+
 	cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
@@ -221,8 +224,10 @@ int main() {
             }
             else
 	    {
-                Bag bag;
-                cout << "You chose to use bag.\n";
+                 Bag bag;
+               
+                 cout << "You chose to use bag.\n";
+
                 bag.displayBag(cout);  //show bag
 		cout << "Would you like to use a potion? Y/N" << endl;
 		bool temp = true;
@@ -235,13 +240,12 @@ int main() {
 		cin >> answer;
 		}
 		if(ans == 'Y'){
-			player.usePotion(bag); // usePotion(bag);
+			
+			player.usePotion(bag);
 		}
 
 		cout << "Do you want to attack or continue using bag? a/b" << endl;
 		cin >> attOrBag;
-
-                //cout << "Which item do you wish to use?\n";
             }
 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {

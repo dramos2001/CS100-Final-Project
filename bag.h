@@ -3,6 +3,7 @@
 
 #include <cassert>
 #include <vector>
+#include <ostream>
 #include "Item.hpp"
 #include "items/potion.hpp"
 #include "items/weapon.hpp"

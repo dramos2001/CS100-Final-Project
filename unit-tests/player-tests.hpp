@@ -11,28 +11,28 @@
 
 // CONSTRUCTOR TEST 1
 // Tests constructor with parameters
-TEST(PlayerTest, ConstructorTest) {
+TEST(PlayerTest, ConstructorTest1) {
     Player player("John Doe", "Wizard");
     EXPECT_EQ(player.getName(), "John Doe");
     EXPECT_EQ(player.getRole(), "Wizard");
     EXPECT_EQ(player.getLevel(), 1);
     EXPECT_EQ(player.getEXP(), 0);
-    EXPECT_EQ(player.getPoints(), 0);
-    EXPECT_EQ(player.getHealth(), 50);
-    EXPECT_EQ(player.getMana(), 0);
+    EXPECT_EQ(player.getPoints(), 20);
+    EXPECT_EQ(player.getHealth(), 100);
+    EXPECT_EQ(player.getMana(), 20);
     // might need to add more test cases
 }
 
 // CONSTRUCTOR TEST 2
-TEST(PlayerTest, ConstructorTest) {
+TEST(PlayerTest, ConstructorTest2) {
     Player player;
     EXPECT_EQ(player.getName(), "");
     EXPECT_EQ(player.getRole(), "");
     EXPECT_EQ(player.getLevel(), 1);
     EXPECT_EQ(player.getEXP(), 0);
-    EXPECT_EQ(player.getPoints(), 0);
-    EXPECT_EQ(player.getHealth(), 50);
-    EXPECT_EQ(player.getMana(), 0);
+    EXPECT_EQ(player.getPoints(), 20);
+    EXPECT_EQ(player.getHealth(), 100);
+    EXPECT_EQ(player.getMana(), 20);
     // might need to add more test cases here as well
 }
 
@@ -57,89 +57,90 @@ TEST(PlayerTest, GetNameTest1) {
     EXPECT_EQ(name, "Damian");
 }
 
-// getName test 2
+// getname test 2
 TEST(PlayerTest, GetNameTest2) {
-    std::string name = "Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr."
+    std::string name = "Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr.";
     Player player(name);
     EXPECT_EQ(player.getName(), name);
 }
 
 // getLevel test 1
 TEST(PlayerTest, GetLevelTest1) {
-    Player player();
+    Player player("Damian", "Warrior");
     EXPECT_EQ(player.getLevel(), 1);
 }
 
-// getLevel test 2
+// get level test 2
 TEST(PlayerTest, GetLevelTest2) {
-    Player player();
+    Player player("Hubert", "Paladin");
     player.setLevel(100);
     EXPECT_EQ(player.getLevel(), 100);
 }
 
 // getEXP test 1
 TEST(PlayerTest, GetEXPTest1) {
-    Player player();
+    Player player("Damian", "Warrior");
     EXPECT_EQ(player.getEXP(), 0);
 }
 
 // getEXP test 2
 TEST(PlayerTest, GetEXPTest2) {
-    Player player();
+    Player player("Damian", "Warrior");
     player.setEXP(1000);
     EXPECT_EQ(player.getEXP(), 1000);
 }
 
 // getHealth test 1
 TEST(PlayerTest, GetHealthTest1) {
-    Player player();
-    EXPECT_EQ(player.getHealth(), 50);
+    Player player("Damian", "Warrior");
+    EXPECT_EQ(player.getHealth(), 100);
 }
 
 // getHealth test 2
 TEST(PlayerTest, GetHealthTest2) {
-    Player player();
+    Player player("Daniel", "Warrior");
     player.takeDamage(87);
-    EXPECT_EQ(player.getHealth(), 0);
+    EXPECT_EQ(player.getHealth(), 13);
 }
 
 // getHealth test 3
 TEST(PlayerTest, GetHealthTest3) {
-    Player player();
+    Player player("Damian", "Wizard");
     player.setHealth(20);
     EXPECT_EQ(player.getHealth(), 20);
 }
 
+
 // getMana test 1
 TEST(PlayerTest, GetManaTest1) {
-    Player player();
-    EXPECT_EQ(player.getMana(), 0);
+    Player player("Damian", "Paladin");
+    EXPECT_EQ(player.getMana(), 20);
 }
 
-// getMana test 2
+// getmana test 2
 TEST(PlayerTest, GetManaTest2) {
-    Player player();
+    Player player("Damian", "Warrior");
     player.setMana(17);
     EXPECT_EQ(player.getMana(), 17);
 }
 
 // getPoints test 1
 TEST(PlayerTest, GetPointsTest1) {
-    Player player();
-    EXPECT_EQ(player.getPoints(), 0);
+    Player player("Daniel", "Paladin");
+    EXPECT_EQ(player.getPoints(), 20);
 }
 
 // getPoints test 2
 TEST(PlayerTest, GetPointsTest2) {
-    Player player();
+    Player player("Damian", "Warrior");
     player.setPoints(123);
-    EXPECT_EQ(player.getLevel(), 123);
+    EXPECT_EQ(player.getPoints(), 123);
 }
 
 // setRole test 1
 TEST(PlayerTest, SetRoleTest1) {
     Player player("Damian", "Paladin");
-    player.setRole("Warrior")
+    player.setRole("Warrior");
     EXPECT_EQ(player.getRole(), "Warrior");
 }
 
@@ -152,10 +153,11 @@ TEST(PlayerTest, SetRoleTest2) {
 
 // setName test 1
 TEST(PlayerTest, SetNameTest1) {
-    Player player();
+    Player player("I", "Wizard");
     player.setName("Blaise Bailey III");
     EXPECT_EQ(player.getName(), "Blaise Bailey III");
 }
+
 
 // setName test 2
 TEST(PlayerTest, SetNameTest2) {
@@ -171,9 +173,9 @@ TEST(PlayerTest, SetLevelTest1) {
     EXPECT_EQ(player.getLevel(), 100);
 }
 
-// setLevel test 2
+// setlevel test 2
 TEST(PlayerTest, SetLevelTest2) {
-    Player player();
+    Player player("Person", "Wizard");
     player.setLevel(2);
     EXPECT_EQ(player.getLevel(), 2);
 }
@@ -187,14 +189,15 @@ TEST(PlayerTest, SetEXPTest1) {
 
 // setEXP test 2
 TEST(PlayerTest, SetEXPTest2) {
-    Player player();
+    Player player("Damian", "Warrior");
     player.setEXP(0);
     EXPECT_EQ(player.getEXP(), 0);
 }
 
 // setPoints test 1
+
 TEST(PlayerTest, SetPointsTest1) {
-    Player player();
+    Player player("Man", "Wizard");
     player.setPoints(48);
     EXPECT_EQ(player.getPoints(), 48);
 }
@@ -207,6 +210,7 @@ TEST(PlayerTest, SetPointsTest2) {
 }
 
 // setHealth test 1
+
 TEST(PlayerTest, SetHealthTest1) {
     Player player("Damian", "Warrior");
     player.setHealth(30);
@@ -214,13 +218,15 @@ TEST(PlayerTest, SetHealthTest1) {
 }
 
 // setHealth test 2
+
 TEST(PlayerTest, SetHealthTest2) {
-    Player player();
+    Player player("Jason", "Wizard");
     player.setHealth(0);
     EXPECT_EQ(player.getHealth(), 0);
 }
 
 // setMana test 1
+
 TEST(PlayerTest, SetManaTest1) {
     Player player("Damian", "Warrior");
     player.setMana(39);
@@ -229,55 +235,38 @@ TEST(PlayerTest, SetManaTest1) {
 
 // setmana test 2
 TEST(PlayerTest, SetManaTest2) {
-    Player player();
+    Player player("Dude", "Paladin");
     player.setMana(100);
     EXPECT_EQ(player.getMana(), 100);
 }
 
-// // setArmor test 1
-// TEST(PlayerTest, SetArmorTest1) {
-//     Player player("Damian", "Warrior");
-//     player.setArmor("100");
+// setArmor test 1
+// TEST(PlaterTest, SetASmorTest1) {
+//     Player player("Damian", "warrior");
+//     player.setArmor(100)
 //     EXPECT_EQ(player., 100);
 // }
 
 // // setArmor test 2
-// TEST(PlayerTest, SetArmorTest2) {
-//     Player player();
-//     player.setArmor(0);
-//     EXPECT_EQ(player.(), 0);
-// }
+// // TEST(PlayerTest, SetArmorTest2) {
+// //     Player player();
+// //     player.setArmor(0);
+// //     EXPECT_EQ(player.(), 0);
+// // }
 
 // takeDamage test 1
 TEST(PlayerTest, TakeDamageTest1) {
     Player player("Daniel", "Paladin");
-    player.takeDamage(49);
-    EXPECT_EQ(player.getHealth(), 1); // 50 - 49 = 1 health
+    player.takeDamage(99);
+    EXPECT_EQ(player.getHealth(), 1); // 100 - 99 = 1 health
 }
 
-// takeDamage test 2
+// takedamage test 2
 TEST(PlayerTest, TakeDamageTest2) {
-    Player player();
+    Player player("Blaise Bailey", "Warrior");
     player.takeDamage(60);
-    EXPECT_EQ(player.getHealth(), 0) // 50 - 60 = -10 so health is set to 0
+    EXPECT_EQ(player.getHealth(), 40); // 100 - 60 = -10 so health is set to 0
 }
-
-// need tests for attack, defend, and cast spell
-
-// // pickItem test 1
-// TEST(PlayerTest, PickItemTest1) {
-//     Player player;
-//     Item item("Potion");
-//     player.pickItem(item);
-// }
-
-// // pickItem test 2
-// TEST(PlayerTest, PickItemTest2) {
-//     Player player;
-//     Item item("Weapon");
-//     player.pickItem(item);
-// }
-
 
 
 #endif
