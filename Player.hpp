@@ -60,28 +60,28 @@ public:
     virtual void attack() 
     {
 	    
-        Mob mob;
-        while (this->getHealth() > 0 && mob.getHealth() > 0)
+         Mob mob;
+        while (this->getHealth() > 0 && mob->getHealth() > 0)
         {
             cout << "Your health:  " << this->getHealth() << endl;
             cout << "Your mana:  " << this->getMana() << endl;
             cout << "-------------------------------------------\n";
-            cout << "The mob's health:  " << mob.getHealth() << endl;
-            cout << "The mob has points:  " << mob.getPoints() << endl << endl;//added display mob points
+            cout << "The mob's health:  " << mob->getHealth() << endl;
+            cout << "The mob has points:  " << mob->getPoints() << endl << endl;//added display mob points
 
             cout << "You chose to attack!!!\n";
 
-            while (player.getHealth() > 0 && mob.getHealth() > 0) {
-                cout << "You made: " << player.getDamage() << " damage to the mob!\n";
-                mob.takeDamage(player.getDamage());
-                cout << "The mob's health:  " << mob.getHealth() << endl << endl;
-                if (mob.getHealth() < 0) {
+            while (this->getHealth() > 0 && mob->getHealth() > 0) {
+                cout << "You made: " << this->getDamage() << " damage to the mob!\n";
+                mob->takeDamage(player.getDamage());
+                cout << "The mob's health:  " << mob->getHealth() << endl << endl;
+                if (mob->getHealth() < 0) {
                     cout << "The mob has been defeated! << endl;
                 }
                 else {
                     this->defend();
             }
-            player.setPoints(mob.getPoints() + player.getPoints());
+            this->setPoints(mob->getPoints() + this->getPoints());
 
         }
 
@@ -89,20 +89,21 @@ public:
  
     virtual void defend() {
 	    
-	   cout << "The mob attacks you!\n";//player defend
+	 cout << "The mob attacks you!\n";//player defend
         
-            if (this->getArmor() < 20)
+            if (this->getArmor() < 50)
             {
-                cout << "The mob made " << mob.getDamage()/2 << " damage to you.\n";
-                player.takeDamage(mob.getDamage()/2);
+                cout << "The mob made " << mob->getDamage()/2 << " damage to you.\n";
+                this->takeDamage(mob.getDamage()/2);
                 cout << "Your current health: " << this->getHealth() << endl;
             }
             else
             {
-                cout << "The mob made " << mob.getDamage() / 4 << " damage to you.\n";
-                player.takeDamage(mob.getDamage()/4);
+                cout << "The mob made " << mob->getDamage() / 4 << " damage to you.\n";
+                this->takeDamage(mob.getDamage()/4);
                 cout << "Your current health: " << this->getHealth() << endl;
             }
+        
         
         
     }
