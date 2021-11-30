@@ -38,12 +38,12 @@ int main() {
     player = game.createPlayer();
 
     if (player.getRole() == "Paladin") {
-	int randomMob = rand() % 4;
-	Mob mob(monsters[randomMob], monsters[randomMob]);
+        int randomMob = rand() % 4;
+        Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Paladin. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
        
-	cout << "Do you wish to attack or use bag?\n";
+	    cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
@@ -82,12 +82,11 @@ int main() {
  
     }
     else if (player.getRole() == "Warrior"){ 
-	int randomMob = rand() % 4;
-	Mob mob(monsters[randomMob], monsters[randomMob]);
+        int randomMob = rand() % 4;
+        Mob mob(monsters[randomMob], monsters[randomMob]);
         cout << "Your role = Warrior. \nThe mob you will be fighting is: "; 
         cout << monsters[randomMob] << endl; 
-     
-	cout << "Do you wish to attack or use bag?\n";
+	    cout << "Do you wish to attack or use bag?\n";
         cout << "Enter a for attack, b for bag.\n";
 
         char attOrBag;
