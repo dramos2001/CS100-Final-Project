@@ -37,16 +37,19 @@ int main() {
     // fight the first mob
     int randomMob = rand() % 3;
     Mob mob(monsters[randomMob], monsters[randomMob]);
+    cout << "\n\nIt looks like someone is approaching you...\n";
     game.battleMob(player, mob, bag);
 
     // fight the second mob
     randomMob = rand() % 3;
     Mob mob2(monsters[randomMob], monsters[randomMob]);
+    cout << "\n\nLooks like someone else is approaching...\n";
     game.battleMob(player, mob2, bag);
 
     // fight the third mob
     randomMob = rand() % 3;
     Mob mob3(monsters[randomMob], monsters[randomMob]);
+    cout << "\n\nOkay one more fight " << player.getName() << "\n";
     game.battleMob(player, mob3, bag);
     
     if (player.getHealth() > 0) {
