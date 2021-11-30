@@ -64,11 +64,12 @@ int main() {
                 //cout << "Which item do you wish to use?\n";
             }
 	   
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 		
-            	cout << "you're still alive. continue attacking.\n";
+	   /* if (player.getHealth() > 0 && mob.getHealth() > 0) { 		
+           	cout << "you're still alive. continue attacking.\n";
             	cin >> attOrBag;
 		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
-	    }
+	    } */ 
+
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death(); 
 		break; 
@@ -76,7 +77,7 @@ int main() {
 	    if (player.getHealth() > 0 && mob.getHealth() <= 0) {
 	    	game.victory();
 	    	break;
-	    }
+	    } 
 
         }
  
@@ -107,11 +108,11 @@ int main() {
                 //cout << "Which item do you wish to use?\n";
             }
 
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) { 
+	 /*   if (player.getHealth() > 0 && mob.getHealth() > 0) { 
             	cout << "you're still alive. continue attacking..\n";
             	cin >> attOrBag;
 		if (attOrBag == 'q' || attOrBag == 'Q') { break; }
-	    }
+	    } */ 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0 ) {
 		game.death();
 		break;
@@ -152,11 +153,11 @@ int main() {
                 //cout << "Which item do you wish to use?\n";
             }
 
-	    if (player.getHealth() > 0 && mob.getHealth() > 0) {
+	   /* if (player.getHealth() > 0 && mob.getHealth() > 0) {
             	cout << "you're still alive. continue attacking.\n";
             	cin >> attOrBag;
 		if (attOrBag == 'q' || attOrBag == 'Q') {break; }
-	    } 
+	    } */ 
 	    if (player.getHealth() <= 0 && mob.getHealth() > 0) {
 		game.death();
 		break; 
@@ -171,12 +172,6 @@ int main() {
         }   
     }
     
-    if (player.getHealth() > 0) {
-	game.victory();
-    }
-    if (player.getHealth() <= 0) {
-          game.death(); 
-    }
   
     return 0;
 }

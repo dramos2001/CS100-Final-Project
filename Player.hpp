@@ -61,10 +61,10 @@ public:
 
     void takeDamage(int damage) { health -= damage; if (health < 0) health = 0; }
 
-    virtual void attack(Mob mob) 
+    virtual void attack(Mob& mob) 
     {
-        //while (this->getHealth() > 0 && mob.getHealth() > 0)
-        //{
+        while (this->getHealth() > 0 && mob.getHealth() > 0)
+        {
             cout << "Your health:  " << this->getHealth() << endl;
             cout << "Your mana:  " << this->getMana() << endl;
             cout << "-------------------------------------------\n";
@@ -74,20 +74,21 @@ public:
             cout << "You chose to attack!!!\n";
 	    int d = rand() % damage + 10; 
 	    this->setDamage(d);
-            //while (this->getHealth() > 0 && mob.getHealth() > 0)
-            //{
+            
                 cout << "You made: " << this->getDamage() << " damage to the mob!\n";
                 mob.takeDamage(this->getDamage());
                 cout << "The mob's health:  " << mob.getHealth() << endl << endl;
                 if (mob.getHealth() <= 0) {
                     cout << "The mob has been defeated!" << endl;
+		    this->setPoints(mob.getPoints() + this->getPoints());
+		   // break;
                 }
                 else {
                     this->defend(mob);
                 }
-                this->setPoints(mob.getPoints() + this->getPoints());
-            //}
-        //}
+             
+            
+        }
 
     }
   
